@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.Ahu2Mapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Ahu2">
+    <!--@mbg.generated-->
+    <!--@Table ahu2-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="outdoor_air_flow" jdbcType="DOUBLE" property="outdoorAirFlow" />
+    <result column="return_air_flow" jdbcType="DOUBLE" property="returnAirFlow" />
+    <result column="supply_air_flow" jdbcType="DOUBLE" property="supplyAirFlow" />
+    <result column="supply_air_flow_set_point" jdbcType="INTEGER" property="supplyAirFlowSetPoint" />
+    <result column="zone_cooling_temperature_set_point" jdbcType="INTEGER" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="INTEGER" property="zoneHeatingTemperatureSetPoint" />
+    <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, outdoor_air_flow, return_air_flow, supply_air_flow, supply_air_flow_set_point, 
+    zone_cooling_temperature_set_point, zone_heating_temperature_set_point, zone_temperature
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ahu2
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ahu2
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu2" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu2 (outdoor_air_flow, return_air_flow, supply_air_flow, 
+      supply_air_flow_set_point, zone_cooling_temperature_set_point, 
+      zone_heating_temperature_set_point, zone_temperature
+      )
+    values (#{outdoorAirFlow,jdbcType=DOUBLE}, #{returnAirFlow,jdbcType=DOUBLE}, #{supplyAirFlow,jdbcType=DOUBLE}, 
+      #{supplyAirFlowSetPoint,jdbcType=INTEGER}, #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER}, 
+      #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER}, #{zoneTemperature,jdbcType=DOUBLE}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu2" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu2
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="outdoorAirFlow != null">
+        outdoor_air_flow,
+      </if>
+      <if test="returnAirFlow != null">
+        return_air_flow,
+      </if>
+      <if test="supplyAirFlow != null">
+        supply_air_flow,
+      </if>
+      <if test="supplyAirFlowSetPoint != null">
+        supply_air_flow_set_point,
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point,
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point,
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="outdoorAirFlow != null">
+        #{outdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAirFlow != null">
+        #{returnAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="supplyAirFlow != null">
+        #{supplyAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="supplyAirFlowSetPoint != null">
+        #{supplyAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneTemperature != null">
+        #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu2">
+    <!--@mbg.generated-->
+    update ahu2
+    <set>
+      <if test="outdoorAirFlow != null">
+        outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="returnAirFlow != null">
+        return_air_flow = #{returnAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="supplyAirFlow != null">
+        supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="supplyAirFlowSetPoint != null">
+        supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature = #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu2">
+    <!--@mbg.generated-->
+    update ahu2
+    set outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE},
+      return_air_flow = #{returnAirFlow,jdbcType=DOUBLE},
+      supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
+      supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=INTEGER},
+      zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_temperature = #{zoneTemperature,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

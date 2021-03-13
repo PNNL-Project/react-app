@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.SebMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Seb">
+    <!--@mbg.generated-->
+    <!--@Table seb-->
+    <result column="common_id" jdbcType="INTEGER" property="commonId" />
+    <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
+    <result column="ahu2_id" jdbcType="INTEGER" property="ahu2Id" />
+    <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
+    <result column="ahu4_id" jdbcType="INTEGER" property="ahu4Id" />
+    <result column="ahu1_thresholds_id" jdbcType="INTEGER" property="ahu1ThresholdsId" />
+    <result column="ahu3_thresholds_id" jdbcType="INTEGER" property="ahu3ThresholdsId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    common_id, ahu1_id, ahu2_id, ahu3_id, ahu4_id, ahu1_thresholds_id, ahu3_thresholds_id
+  </sql>
+  <insert id="insert" parameterType="edu.neu.cs6510.pnnl.hunting.model.Seb">
+    <!--@mbg.generated-->
+    insert into seb (common_id, ahu1_id, ahu2_id, 
+      ahu3_id, ahu4_id, ahu1_thresholds_id, 
+      ahu3_thresholds_id)
+    values (#{commonId,jdbcType=INTEGER}, #{ahu1Id,jdbcType=INTEGER}, #{ahu2Id,jdbcType=INTEGER}, 
+      #{ahu3Id,jdbcType=INTEGER}, #{ahu4Id,jdbcType=INTEGER}, #{ahu1ThresholdsId,jdbcType=INTEGER}, 
+      #{ahu3ThresholdsId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Seb">
+    <!--@mbg.generated-->
+    insert into seb
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="commonId != null">
+        common_id,
+      </if>
+      <if test="ahu1Id != null">
+        ahu1_id,
+      </if>
+      <if test="ahu2Id != null">
+        ahu2_id,
+      </if>
+      <if test="ahu3Id != null">
+        ahu3_id,
+      </if>
+      <if test="ahu4Id != null">
+        ahu4_id,
+      </if>
+      <if test="ahu1ThresholdsId != null">
+        ahu1_thresholds_id,
+      </if>
+      <if test="ahu3ThresholdsId != null">
+        ahu3_thresholds_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="commonId != null">
+        #{commonId,jdbcType=INTEGER},
+      </if>
+      <if test="ahu1Id != null">
+        #{ahu1Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu2Id != null">
+        #{ahu2Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu3Id != null">
+        #{ahu3Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu4Id != null">
+        #{ahu4Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu1ThresholdsId != null">
+        #{ahu1ThresholdsId,jdbcType=INTEGER},
+      </if>
+      <if test="ahu3ThresholdsId != null">
+        #{ahu3ThresholdsId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.Ahu4Mapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Ahu4">
+    <!--@mbg.generated-->
+    <!--@Table ahu4-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="exhaust_air_flow" jdbcType="DOUBLE" property="exhaustAirFlow" />
+    <result column="exhaust_air_flow_set_point" jdbcType="DOUBLE" property="exhaustAirFlowSetPoint" />
+    <result column="maximum_discharge_air_flow_set_point" jdbcType="INTEGER" property="maximumDischargeAirFlowSetPoint" />
+    <result column="minimum_discharge_air_flow_set_point" jdbcType="INTEGER" property="minimumDischargeAirFlowSetPoint" />
+    <result column="supply_air_flow" jdbcType="DOUBLE" property="supplyAirFlow" />
+    <result column="unoccupied_zone_heating_temperature_set_point" jdbcType="INTEGER" property="unoccupiedZoneHeatingTemperatureSetPoint" />
+    <result column="zone_cooling_temperature_set_point" jdbcType="INTEGER" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="INTEGER" property="zoneHeatingTemperatureSetPoint" />
+    <result column="zone_outdoor_air_flow" jdbcType="DOUBLE" property="zoneOutdoorAirFlow" />
+    <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, exhaust_air_flow, exhaust_air_flow_set_point, maximum_discharge_air_flow_set_point, 
+    minimum_discharge_air_flow_set_point, supply_air_flow, unoccupied_zone_heating_temperature_set_point, 
+    zone_cooling_temperature_set_point, zone_heating_temperature_set_point, zone_outdoor_air_flow, 
+    zone_temperature
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ahu4
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ahu4
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu4" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu4 (exhaust_air_flow, exhaust_air_flow_set_point, 
+      maximum_discharge_air_flow_set_point, minimum_discharge_air_flow_set_point, 
+      supply_air_flow, unoccupied_zone_heating_temperature_set_point, 
+      zone_cooling_temperature_set_point, zone_heating_temperature_set_point, 
+      zone_outdoor_air_flow, zone_temperature)
+    values (#{exhaustAirFlow,jdbcType=DOUBLE}, #{exhaustAirFlowSetPoint,jdbcType=DOUBLE}, 
+      #{maximumDischargeAirFlowSetPoint,jdbcType=INTEGER}, #{minimumDischargeAirFlowSetPoint,jdbcType=INTEGER}, 
+      #{supplyAirFlow,jdbcType=DOUBLE}, #{unoccupiedZoneHeatingTemperatureSetPoint,jdbcType=INTEGER}, 
+      #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER}, #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER}, 
+      #{zoneOutdoorAirFlow,jdbcType=DOUBLE}, #{zoneTemperature,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu4" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu4
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="exhaustAirFlow != null">
+        exhaust_air_flow,
+      </if>
+      <if test="exhaustAirFlowSetPoint != null">
+        exhaust_air_flow_set_point,
+      </if>
+      <if test="maximumDischargeAirFlowSetPoint != null">
+        maximum_discharge_air_flow_set_point,
+      </if>
+      <if test="minimumDischargeAirFlowSetPoint != null">
+        minimum_discharge_air_flow_set_point,
+      </if>
+      <if test="supplyAirFlow != null">
+        supply_air_flow,
+      </if>
+      <if test="unoccupiedZoneHeatingTemperatureSetPoint != null">
+        unoccupied_zone_heating_temperature_set_point,
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point,
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point,
+      </if>
+      <if test="zoneOutdoorAirFlow != null">
+        zone_outdoor_air_flow,
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="exhaustAirFlow != null">
+        #{exhaustAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustAirFlowSetPoint != null">
+        #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="maximumDischargeAirFlowSetPoint != null">
+        #{maximumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="minimumDischargeAirFlowSetPoint != null">
+        #{minimumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="supplyAirFlow != null">
+        #{supplyAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="unoccupiedZoneHeatingTemperatureSetPoint != null">
+        #{unoccupiedZoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneOutdoorAirFlow != null">
+        #{zoneOutdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="zoneTemperature != null">
+        #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu4">
+    <!--@mbg.generated-->
+    update ahu4
+    <set>
+      <if test="exhaustAirFlow != null">
+        exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustAirFlowSetPoint != null">
+        exhaust_air_flow_set_point = #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="maximumDischargeAirFlowSetPoint != null">
+        maximum_discharge_air_flow_set_point = #{maximumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="minimumDischargeAirFlowSetPoint != null">
+        minimum_discharge_air_flow_set_point = #{minimumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="supplyAirFlow != null">
+        supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="unoccupiedZoneHeatingTemperatureSetPoint != null">
+        unoccupied_zone_heating_temperature_set_point = #{unoccupiedZoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneOutdoorAirFlow != null">
+        zone_outdoor_air_flow = #{zoneOutdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature = #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu4">
+    <!--@mbg.generated-->
+    update ahu4
+    set exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
+      exhaust_air_flow_set_point = #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
+      maximum_discharge_air_flow_set_point = #{maximumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      minimum_discharge_air_flow_set_point = #{minimumDischargeAirFlowSetPoint,jdbcType=INTEGER},
+      supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
+      unoccupied_zone_heating_temperature_set_point = #{unoccupiedZoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_outdoor_air_flow = #{zoneOutdoorAirFlow,jdbcType=DOUBLE},
+      zone_temperature = #{zoneTemperature,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

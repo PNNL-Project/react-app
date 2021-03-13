@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.VavMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Vav">
+    <!--@mbg.generated-->
+    <!--@Table vav-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="zone_air_flow" jdbcType="INTEGER" property="zoneAirFlow" />
+    <result column="zone_cooling_air_flow_set_point" jdbcType="DOUBLE" property="zoneCoolingAirFlowSetPoint" />
+    <result column="zone_cooling_temperature_set_point" jdbcType="INTEGER" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="INTEGER" property="zoneHeatingTemperatureSetPoint" />
+    <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
+    <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
+    <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
+    <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, zone_air_flow, zone_cooling_air_flow_set_point, zone_cooling_temperature_set_point, 
+    zone_heating_temperature_set_point, zone_temperature, ahu1_id, ahu3_id, vav_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from vav
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from vav
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into vav (zone_air_flow, zone_cooling_air_flow_set_point, 
+      zone_cooling_temperature_set_point, zone_heating_temperature_set_point, 
+      zone_temperature, ahu1_id, ahu3_id, 
+      vav_name)
+    values (#{zoneAirFlow,jdbcType=INTEGER}, #{zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE}, 
+      #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER}, #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER}, 
+      #{zoneTemperature,jdbcType=DOUBLE}, #{ahu1Id,jdbcType=INTEGER}, #{ahu3Id,jdbcType=INTEGER}, 
+      #{vavName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into vav
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="zoneAirFlow != null">
+        zone_air_flow,
+      </if>
+      <if test="zoneCoolingAirFlowSetPoint != null">
+        zone_cooling_air_flow_set_point,
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point,
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point,
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature,
+      </if>
+      <if test="ahu1Id != null">
+        ahu1_id,
+      </if>
+      <if test="ahu3Id != null">
+        ahu3_id,
+      </if>
+      <if test="vavName != null">
+        vav_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="zoneAirFlow != null">
+        #{zoneAirFlow,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingAirFlowSetPoint != null">
+        #{zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneTemperature != null">
+        #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+      <if test="ahu1Id != null">
+        #{ahu1Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu3Id != null">
+        #{ahu3Id,jdbcType=INTEGER},
+      </if>
+      <if test="vavName != null">
+        #{vavName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav">
+    <!--@mbg.generated-->
+    update vav
+    <set>
+      <if test="zoneAirFlow != null">
+        zone_air_flow = #{zoneAirFlow,jdbcType=INTEGER},
+      </if>
+      <if test="zoneCoolingAirFlowSetPoint != null">
+        zone_cooling_air_flow_set_point = #{zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+      <if test="zoneCoolingTemperatureSetPoint != null">
+        zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneHeatingTemperatureSetPoint != null">
+        zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      </if>
+      <if test="zoneTemperature != null">
+        zone_temperature = #{zoneTemperature,jdbcType=DOUBLE},
+      </if>
+      <if test="ahu1Id != null">
+        ahu1_id = #{ahu1Id,jdbcType=INTEGER},
+      </if>
+      <if test="ahu3Id != null">
+        ahu3_id = #{ahu3Id,jdbcType=INTEGER},
+      </if>
+      <if test="vavName != null">
+        vav_name = #{vavName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav">
+    <!--@mbg.generated-->
+    update vav
+    set zone_air_flow = #{zoneAirFlow,jdbcType=INTEGER},
+      zone_cooling_air_flow_set_point = #{zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE},
+      zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      zone_temperature = #{zoneTemperature,jdbcType=DOUBLE},
+      ahu1_id = #{ahu1Id,jdbcType=INTEGER},
+      ahu3_id = #{ahu3Id,jdbcType=INTEGER},
+      vav_name = #{vavName,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
