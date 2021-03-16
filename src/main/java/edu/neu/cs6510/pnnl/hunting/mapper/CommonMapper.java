@@ -1,6 +1,6 @@
 package edu.neu.cs6510.pnnl.hunting.mapper;
 
-import edu.neu.cs6510.pnnl.hunting.model.Common;
+import edu.neu.cs6510.pnnl.hunting.model.Common;import org.apache.ibatis.annotations.Param;import java.util.Date;import java.util.List;
 
 public interface CommonMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +14,8 @@ public interface CommonMapper {
     int updateByPrimaryKeySelective(Common record);
 
     int updateByPrimaryKey(Common record);
+
+    List<Common> selectByTime(@Param("startTime") Date startTime, @Param("endTime") Date endTime);
+
+    String getVavTableName(@Param("vavTable") String vavTable);
 }

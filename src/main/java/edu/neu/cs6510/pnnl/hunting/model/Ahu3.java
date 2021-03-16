@@ -10,7 +10,7 @@ public class Ahu3 {
 
     private Double exhaustAirFlow;
 
-    private Integer minimumOutdoorAirFlow;
+    private Double minimumOutdoorAirFlow;
 
     private Double outdoorAirFlow;
 }

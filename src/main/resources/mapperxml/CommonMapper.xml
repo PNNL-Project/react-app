@@ -129,4 +129,27 @@
       `time` = #{time,jdbcType=TIMESTAMP}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByTime" parameterType="java.sql.Timestamp" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from common
+    <where>
+      <if test="startTime!=null">
+        <![CDATA[and DATE_FORMAT(#{endTime}, '%Y-%m-%d %H:%T:%s') >=
+                        DATE_FORMAT(#{startTime}, '%Y-%m-%d %H:%T:%s')   ]]>
+      </if>
+      <if test="endTime!=null">
+        <![CDATA[and DATE_FORMAT(time, '%Y-%m-%d %H:%T:%s') <=
+                        DATE_FORMAT(#{endTime} , '%Y-%m-%d %H:%T:%s')    ]]>
+      </if>
+    </where>
+
+  </select>
+
+  <select id="getVavTableName" resultType="java.lang.String" statementType="STATEMENT">
+    select COLUMN_NAME
+    from information_schema.COLUMNS
+    where TABLE_NAME=${vavTable}
+    and COLUMN_NAME like '%ahu%'
+    </select>
 </mapper>

@@ -1,43 +1,19 @@
 package edu.neu.cs6510.pnnl.hunting.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import edu.neu.cs6510.pnnl.hunting.model.Ahu3Thresholds;
-import edu.neu.cs6510.pnnl.hunting.mapper.Ahu3ThresholdsMapper;
-@Service
-public class Ahu3ThresholdsService{
+public interface Ahu3ThresholdsService{
 
-    @Resource
-    private Ahu3ThresholdsMapper ahu3ThresholdsMapper;
 
-    
-    public int deleteByPrimaryKey(Integer id) {
-        return ahu3ThresholdsMapper.deleteByPrimaryKey(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    
-    public int insert(Ahu3Thresholds record) {
-        return ahu3ThresholdsMapper.insert(record);
-    }
+    int insert(Ahu3Thresholds record);
 
-    
-    public int insertSelective(Ahu3Thresholds record) {
-        return ahu3ThresholdsMapper.insertSelective(record);
-    }
+    int insertSelective(Ahu3Thresholds record);
 
-    
-    public Ahu3Thresholds selectByPrimaryKey(Integer id) {
-        return ahu3ThresholdsMapper.selectByPrimaryKey(id);
-    }
+    Ahu3Thresholds selectByPrimaryKey(Integer id);
 
-    
-    public int updateByPrimaryKeySelective(Ahu3Thresholds record) {
-        return ahu3ThresholdsMapper.updateByPrimaryKeySelective(record);
-    }
+    int updateByPrimaryKeySelective(Ahu3Thresholds record);
 
-    
-    public int updateByPrimaryKey(Ahu3Thresholds record) {
-        return ahu3ThresholdsMapper.updateByPrimaryKey(record);
-    }
+    int updateByPrimaryKey(Ahu3Thresholds record);
 
 }

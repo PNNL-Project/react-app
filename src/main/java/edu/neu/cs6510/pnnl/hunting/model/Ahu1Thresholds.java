@@ -6,5 +6,5 @@ import lombok.Data;
 public class Ahu1Thresholds {
     private Integer id;
 
-    private Integer minimumOutdoorAirFlowSetPoint;
+    private Double minimumOutdoorAirFlowSetPoint;
 }

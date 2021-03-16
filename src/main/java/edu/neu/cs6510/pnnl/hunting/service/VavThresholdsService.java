@@ -1,43 +1,19 @@
 package edu.neu.cs6510.pnnl.hunting.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import edu.neu.cs6510.pnnl.hunting.mapper.VavThresholdsMapper;
 import edu.neu.cs6510.pnnl.hunting.model.VavThresholds;
-@Service
-public class VavThresholdsService{
+public interface VavThresholdsService{
 
-    @Resource
-    private VavThresholdsMapper vavThresholdsMapper;
 
-    
-    public int deleteByPrimaryKey(Integer id) {
-        return vavThresholdsMapper.deleteByPrimaryKey(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    
-    public int insert(VavThresholds record) {
-        return vavThresholdsMapper.insert(record);
-    }
+    int insert(VavThresholds record);
 
-    
-    public int insertSelective(VavThresholds record) {
-        return vavThresholdsMapper.insertSelective(record);
-    }
+    int insertSelective(VavThresholds record);
 
-    
-    public VavThresholds selectByPrimaryKey(Integer id) {
-        return vavThresholdsMapper.selectByPrimaryKey(id);
-    }
+    VavThresholds selectByPrimaryKey(Integer id);
 
-    
-    public int updateByPrimaryKeySelective(VavThresholds record) {
-        return vavThresholdsMapper.updateByPrimaryKeySelective(record);
-    }
+    int updateByPrimaryKeySelective(VavThresholds record);
 
-    
-    public int updateByPrimaryKey(VavThresholds record) {
-        return vavThresholdsMapper.updateByPrimaryKey(record);
-    }
+    int updateByPrimaryKey(VavThresholds record);
 
 }

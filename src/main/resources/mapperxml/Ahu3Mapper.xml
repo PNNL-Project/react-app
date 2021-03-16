@@ -7,7 +7,7 @@
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="discharge_air_flow" jdbcType="DOUBLE" property="dischargeAirFlow" />
     <result column="exhaust_air_flow" jdbcType="DOUBLE" property="exhaustAirFlow" />
-    <result column="minimum_outdoor_air_flow" jdbcType="INTEGER" property="minimumOutdoorAirFlow" />
+    <result column="minimum_outdoor_air_flow" jdbcType="DOUBLE" property="minimumOutdoorAirFlow" />
     <result column="outdoor_air_flow" jdbcType="DOUBLE" property="outdoorAirFlow" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -30,7 +30,7 @@
     <!--@mbg.generated-->
     insert into ahu3 (discharge_air_flow, exhaust_air_flow, minimum_outdoor_air_flow, 
       outdoor_air_flow)
-    values (#{dischargeAirFlow,jdbcType=DOUBLE}, #{exhaustAirFlow,jdbcType=DOUBLE}, #{minimumOutdoorAirFlow,jdbcType=INTEGER}, 
+    values (#{dischargeAirFlow,jdbcType=DOUBLE}, #{exhaustAirFlow,jdbcType=DOUBLE}, #{minimumOutdoorAirFlow,jdbcType=DOUBLE}, 
       #{outdoorAirFlow,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3" useGeneratedKeys="true">
@@ -58,7 +58,7 @@
         #{exhaustAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlow != null">
-        #{minimumOutdoorAirFlow,jdbcType=INTEGER},
+        #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="outdoorAirFlow != null">
         #{outdoorAirFlow,jdbcType=DOUBLE},
@@ -76,7 +76,7 @@
         exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlow != null">
-        minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=INTEGER},
+        minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="outdoorAirFlow != null">
         outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE},
@@ -89,7 +89,7 @@
     update ahu3
     set discharge_air_flow = #{dischargeAirFlow,jdbcType=DOUBLE},
       exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
-      minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=INTEGER},
+      minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
       outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE}
     where ID = #{id,jdbcType=INTEGER}
   </update>

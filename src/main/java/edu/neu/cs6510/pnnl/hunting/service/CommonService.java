@@ -1,43 +1,19 @@
 package edu.neu.cs6510.pnnl.hunting.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
 import edu.neu.cs6510.pnnl.hunting.model.Common;
-import edu.neu.cs6510.pnnl.hunting.mapper.CommonMapper;
-@Service
-public class CommonService{
+public interface CommonService{
 
-    @Resource
-    private CommonMapper commonMapper;
 
-    
-    public int deleteByPrimaryKey(Integer id) {
-        return commonMapper.deleteByPrimaryKey(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    
-    public int insert(Common record) {
-        return commonMapper.insert(record);
-    }
+    int insert(Common record);
 
-    
-    public int insertSelective(Common record) {
-        return commonMapper.insertSelective(record);
-    }
+    int insertSelective(Common record);
 
-    
-    public Common selectByPrimaryKey(Integer id) {
-        return commonMapper.selectByPrimaryKey(id);
-    }
+    Common selectByPrimaryKey(Integer id);
 
-    
-    public int updateByPrimaryKeySelective(Common record) {
-        return commonMapper.updateByPrimaryKeySelective(record);
-    }
+    int updateByPrimaryKeySelective(Common record);
 
-    
-    public int updateByPrimaryKey(Common record) {
-        return commonMapper.updateByPrimaryKey(record);
-    }
+    int updateByPrimaryKey(Common record);
 
 }

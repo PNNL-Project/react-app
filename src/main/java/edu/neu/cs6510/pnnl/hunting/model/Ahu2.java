@@ -12,11 +12,11 @@ public class Ahu2 {
 
     private Double supplyAirFlow;
 
-    private Integer supplyAirFlowSetPoint;
+    private Double supplyAirFlowSetPoint;
 
-    private Integer zoneCoolingTemperatureSetPoint;
+    private Double zoneCoolingTemperatureSetPoint;
 
-    private Integer zoneHeatingTemperatureSetPoint;
+    private Double zoneHeatingTemperatureSetPoint;
 
     private Double zoneTemperature;
 }

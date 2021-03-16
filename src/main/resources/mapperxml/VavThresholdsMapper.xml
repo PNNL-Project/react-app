@@ -5,10 +5,10 @@
     <!--@mbg.generated-->
     <!--@Table vav_thresholds-->
     <id column="ID" jdbcType="INTEGER" property="id" />
-    <result column="maximum_zone_air_flow" jdbcType="INTEGER" property="maximumZoneAirFlow" />
-    <result column="minimum_zone_air_flow" jdbcType="INTEGER" property="minimumZoneAirFlow" />
-    <result column="zone_air_flow_set_point_offset" jdbcType="INTEGER" property="zoneAirFlowSetPointOffset" />
-    <result column="zone_reheat_air_flow" jdbcType="INTEGER" property="zoneReheatAirFlow" />
+    <result column="maximum_zone_air_flow" jdbcType="DOUBLE" property="maximumZoneAirFlow" />
+    <result column="minimum_zone_air_flow" jdbcType="DOUBLE" property="minimumZoneAirFlow" />
+    <result column="zone_air_flow_set_point_offset" jdbcType="DOUBLE" property="zoneAirFlowSetPointOffset" />
+    <result column="zone_reheat_air_flow" jdbcType="DOUBLE" property="zoneReheatAirFlow" />
     <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
     <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
     <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
@@ -36,8 +36,8 @@
       zone_air_flow_set_point_offset, zone_reheat_air_flow, 
       ahu1_id, ahu3_id, vav_name
       )
-    values (#{maximumZoneAirFlow,jdbcType=INTEGER}, #{minimumZoneAirFlow,jdbcType=INTEGER}, 
-      #{zoneAirFlowSetPointOffset,jdbcType=INTEGER}, #{zoneReheatAirFlow,jdbcType=INTEGER}, 
+    values (#{maximumZoneAirFlow,jdbcType=DOUBLE}, #{minimumZoneAirFlow,jdbcType=DOUBLE}, 
+      #{zoneAirFlowSetPointOffset,jdbcType=DOUBLE}, #{zoneReheatAirFlow,jdbcType=DOUBLE}, 
       #{ahu1Id,jdbcType=INTEGER}, #{ahu3Id,jdbcType=INTEGER}, #{vavName,jdbcType=VARCHAR}
       )
   </insert>
@@ -69,16 +69,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="maximumZoneAirFlow != null">
-        #{maximumZoneAirFlow,jdbcType=INTEGER},
+        #{maximumZoneAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumZoneAirFlow != null">
-        #{minimumZoneAirFlow,jdbcType=INTEGER},
+        #{minimumZoneAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="zoneAirFlowSetPointOffset != null">
-        #{zoneAirFlowSetPointOffset,jdbcType=INTEGER},
+        #{zoneAirFlowSetPointOffset,jdbcType=DOUBLE},
       </if>
       <if test="zoneReheatAirFlow != null">
-        #{zoneReheatAirFlow,jdbcType=INTEGER},
+        #{zoneReheatAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="ahu1Id != null">
         #{ahu1Id,jdbcType=INTEGER},
@@ -96,16 +96,16 @@
     update vav_thresholds
     <set>
       <if test="maximumZoneAirFlow != null">
-        maximum_zone_air_flow = #{maximumZoneAirFlow,jdbcType=INTEGER},
+        maximum_zone_air_flow = #{maximumZoneAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumZoneAirFlow != null">
-        minimum_zone_air_flow = #{minimumZoneAirFlow,jdbcType=INTEGER},
+        minimum_zone_air_flow = #{minimumZoneAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="zoneAirFlowSetPointOffset != null">
-        zone_air_flow_set_point_offset = #{zoneAirFlowSetPointOffset,jdbcType=INTEGER},
+        zone_air_flow_set_point_offset = #{zoneAirFlowSetPointOffset,jdbcType=DOUBLE},
       </if>
       <if test="zoneReheatAirFlow != null">
-        zone_reheat_air_flow = #{zoneReheatAirFlow,jdbcType=INTEGER},
+        zone_reheat_air_flow = #{zoneReheatAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="ahu1Id != null">
         ahu1_id = #{ahu1Id,jdbcType=INTEGER},
@@ -122,10 +122,10 @@
   <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.VavThresholds">
     <!--@mbg.generated-->
     update vav_thresholds
-    set maximum_zone_air_flow = #{maximumZoneAirFlow,jdbcType=INTEGER},
-      minimum_zone_air_flow = #{minimumZoneAirFlow,jdbcType=INTEGER},
-      zone_air_flow_set_point_offset = #{zoneAirFlowSetPointOffset,jdbcType=INTEGER},
-      zone_reheat_air_flow = #{zoneReheatAirFlow,jdbcType=INTEGER},
+    set maximum_zone_air_flow = #{maximumZoneAirFlow,jdbcType=DOUBLE},
+      minimum_zone_air_flow = #{minimumZoneAirFlow,jdbcType=DOUBLE},
+      zone_air_flow_set_point_offset = #{zoneAirFlowSetPointOffset,jdbcType=DOUBLE},
+      zone_reheat_air_flow = #{zoneReheatAirFlow,jdbcType=DOUBLE},
       ahu1_id = #{ahu1Id,jdbcType=INTEGER},
       ahu3_id = #{ahu3Id,jdbcType=INTEGER},
       vav_name = #{vavName,jdbcType=VARCHAR}

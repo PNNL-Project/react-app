@@ -5,7 +5,7 @@
     <!--@mbg.generated-->
     <!--@Table ahu1_thresholds-->
     <id column="ID" jdbcType="INTEGER" property="id" />
-    <result column="minimum_outdoor_air_flow_set_point" jdbcType="INTEGER" property="minimumOutdoorAirFlowSetPoint" />
+    <result column="minimum_outdoor_air_flow_set_point" jdbcType="DOUBLE" property="minimumOutdoorAirFlowSetPoint" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
@@ -26,7 +26,7 @@
   <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds" useGeneratedKeys="true">
     <!--@mbg.generated-->
     insert into ahu1_thresholds (minimum_outdoor_air_flow_set_point)
-    values (#{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER})
+    values (#{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -38,7 +38,7 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="minimumOutdoorAirFlowSetPoint != null">
-        #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER},
+        #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -47,7 +47,7 @@
     update ahu1_thresholds
     <set>
       <if test="minimumOutdoorAirFlowSetPoint != null">
-        minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER},
+        minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
@@ -55,7 +55,7 @@
   <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds">
     <!--@mbg.generated-->
     update ahu1_thresholds
-    set minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER}
+    set minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

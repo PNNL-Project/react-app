@@ -6,8 +6,8 @@
     <!--@Table ahu3_thresholds-->
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="exhaust_air_flow_set_point" jdbcType="DOUBLE" property="exhaustAirFlowSetPoint" />
-    <result column="minimum_outdoor_air_flow" jdbcType="INTEGER" property="minimumOutdoorAirFlow" />
-    <result column="minimum_outdoor_air_flow_set_point" jdbcType="INTEGER" property="minimumOutdoorAirFlowSetPoint" />
+    <result column="minimum_outdoor_air_flow" jdbcType="DOUBLE" property="minimumOutdoorAirFlow" />
+    <result column="minimum_outdoor_air_flow_set_point" jdbcType="DOUBLE" property="minimumOutdoorAirFlowSetPoint" />
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
@@ -29,8 +29,8 @@
     <!--@mbg.generated-->
     insert into ahu3_thresholds (exhaust_air_flow_set_point, minimum_outdoor_air_flow, 
       minimum_outdoor_air_flow_set_point)
-    values (#{exhaustAirFlowSetPoint,jdbcType=DOUBLE}, #{minimumOutdoorAirFlow,jdbcType=INTEGER}, 
-      #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER})
+    values (#{exhaustAirFlowSetPoint,jdbcType=DOUBLE}, #{minimumOutdoorAirFlow,jdbcType=DOUBLE}, 
+      #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3Thresholds" useGeneratedKeys="true">
     <!--@mbg.generated-->
@@ -51,10 +51,10 @@
         #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlow != null">
-        #{minimumOutdoorAirFlow,jdbcType=INTEGER},
+        #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlowSetPoint != null">
-        #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER},
+        #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
     </trim>
   </insert>
@@ -66,10 +66,10 @@
         exhaust_air_flow_set_point = #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlow != null">
-        minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=INTEGER},
+        minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="minimumOutdoorAirFlowSetPoint != null">
-        minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER},
+        minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
     </set>
     where ID = #{id,jdbcType=INTEGER}
@@ -78,8 +78,8 @@
     <!--@mbg.generated-->
     update ahu3_thresholds
     set exhaust_air_flow_set_point = #{exhaustAirFlowSetPoint,jdbcType=DOUBLE},
-      minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=INTEGER},
-      minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=INTEGER}
+      minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
+      minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE}
     where ID = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

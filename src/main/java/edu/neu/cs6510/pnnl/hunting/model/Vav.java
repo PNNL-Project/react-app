@@ -10,9 +10,9 @@ public class Vav {
 
     private Double zoneCoolingAirFlowSetPoint;
 
-    private Integer zoneCoolingTemperatureSetPoint;
+    private Double zoneCoolingTemperatureSetPoint;
 
-    private Integer zoneHeatingTemperatureSetPoint;
+    private Double zoneHeatingTemperatureSetPoint;
 
     private Double zoneTemperature;
 

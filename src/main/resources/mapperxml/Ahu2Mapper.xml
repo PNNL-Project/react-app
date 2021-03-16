@@ -8,9 +8,9 @@
     <result column="outdoor_air_flow" jdbcType="DOUBLE" property="outdoorAirFlow" />
     <result column="return_air_flow" jdbcType="DOUBLE" property="returnAirFlow" />
     <result column="supply_air_flow" jdbcType="DOUBLE" property="supplyAirFlow" />
-    <result column="supply_air_flow_set_point" jdbcType="INTEGER" property="supplyAirFlowSetPoint" />
-    <result column="zone_cooling_temperature_set_point" jdbcType="INTEGER" property="zoneCoolingTemperatureSetPoint" />
-    <result column="zone_heating_temperature_set_point" jdbcType="INTEGER" property="zoneHeatingTemperatureSetPoint" />
+    <result column="supply_air_flow_set_point" jdbcType="DOUBLE" property="supplyAirFlowSetPoint" />
+    <result column="zone_cooling_temperature_set_point" jdbcType="DOUBLE" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="DOUBLE" property="zoneHeatingTemperatureSetPoint" />
     <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
   </resultMap>
   <sql id="Base_Column_List">
@@ -37,8 +37,8 @@
       zone_heating_temperature_set_point, zone_temperature
       )
     values (#{outdoorAirFlow,jdbcType=DOUBLE}, #{returnAirFlow,jdbcType=DOUBLE}, #{supplyAirFlow,jdbcType=DOUBLE}, 
-      #{supplyAirFlowSetPoint,jdbcType=INTEGER}, #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER}, 
-      #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER}, #{zoneTemperature,jdbcType=DOUBLE}
+      #{supplyAirFlowSetPoint,jdbcType=DOUBLE}, #{zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE}, 
+      #{zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE}, #{zoneTemperature,jdbcType=DOUBLE}
       )
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu2" useGeneratedKeys="true">
@@ -78,13 +78,13 @@
         #{supplyAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="supplyAirFlowSetPoint != null">
-        #{supplyAirFlowSetPoint,jdbcType=INTEGER},
+        #{supplyAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneCoolingTemperatureSetPoint != null">
-        #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+        #{zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneHeatingTemperatureSetPoint != null">
-        #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+        #{zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneTemperature != null">
         #{zoneTemperature,jdbcType=DOUBLE},
@@ -105,13 +105,13 @@
         supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
       </if>
       <if test="supplyAirFlowSetPoint != null">
-        supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=INTEGER},
+        supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneCoolingTemperatureSetPoint != null">
-        zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
+        zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneHeatingTemperatureSetPoint != null">
-        zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+        zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE},
       </if>
       <if test="zoneTemperature != null">
         zone_temperature = #{zoneTemperature,jdbcType=DOUBLE},
@@ -125,9 +125,9 @@
     set outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE},
       return_air_flow = #{returnAirFlow,jdbcType=DOUBLE},
       supply_air_flow = #{supplyAirFlow,jdbcType=DOUBLE},
-      supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=INTEGER},
-      zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=INTEGER},
-      zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=INTEGER},
+      supply_air_flow_set_point = #{supplyAirFlowSetPoint,jdbcType=DOUBLE},
+      zone_cooling_temperature_set_point = #{zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE},
+      zone_heating_temperature_set_point = #{zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE},
       zone_temperature = #{zoneTemperature,jdbcType=DOUBLE}
     where ID = #{id,jdbcType=INTEGER}
   </update>

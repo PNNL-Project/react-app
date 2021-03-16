@@ -10,17 +10,17 @@ public class Ahu4 {
 
     private Double exhaustAirFlowSetPoint;
 
-    private Integer maximumDischargeAirFlowSetPoint;
+    private Double maximumDischargeAirFlowSetPoint;
 
-    private Integer minimumDischargeAirFlowSetPoint;
+    private Double minimumDischargeAirFlowSetPoint;
 
     private Double supplyAirFlow;
 
-    private Integer unoccupiedZoneHeatingTemperatureSetPoint;
+    private Double unoccupiedZoneHeatingTemperatureSetPoint;
 
-    private Integer zoneCoolingTemperatureSetPoint;
+    private Double zoneCoolingTemperatureSetPoint;
 
-    private Integer zoneHeatingTemperatureSetPoint;
+    private Double zoneHeatingTemperatureSetPoint;
 
     private Double zoneOutdoorAirFlow;
 

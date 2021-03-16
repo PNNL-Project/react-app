@@ -8,7 +8,7 @@ public class Ahu3Thresholds {
 
     private Double exhaustAirFlowSetPoint;
 
-    private Integer minimumOutdoorAirFlow;
+    private Double minimumOutdoorAirFlow;
 
-    private Integer minimumOutdoorAirFlowSetPoint;
+    private Double minimumOutdoorAirFlowSetPoint;
 }

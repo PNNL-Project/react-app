@@ -1,43 +1,19 @@
 package edu.neu.cs6510.pnnl.hunting.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import edu.neu.cs6510.pnnl.hunting.mapper.Ahu1Mapper;
 import edu.neu.cs6510.pnnl.hunting.model.Ahu1;
-@Service
-public class Ahu1Service{
+public interface Ahu1Service{
 
-    @Resource
-    private Ahu1Mapper ahu1Mapper;
 
-    
-    public int deleteByPrimaryKey(Integer id) {
-        return ahu1Mapper.deleteByPrimaryKey(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    
-    public int insert(Ahu1 record) {
-        return ahu1Mapper.insert(record);
-    }
+    int insert(Ahu1 record);
 
-    
-    public int insertSelective(Ahu1 record) {
-        return ahu1Mapper.insertSelective(record);
-    }
+    int insertSelective(Ahu1 record);
 
-    
-    public Ahu1 selectByPrimaryKey(Integer id) {
-        return ahu1Mapper.selectByPrimaryKey(id);
-    }
+    Ahu1 selectByPrimaryKey(Integer id);
 
-    
-    public int updateByPrimaryKeySelective(Ahu1 record) {
-        return ahu1Mapper.updateByPrimaryKeySelective(record);
-    }
+    int updateByPrimaryKeySelective(Ahu1 record);
 
-    
-    public int updateByPrimaryKey(Ahu1 record) {
-        return ahu1Mapper.updateByPrimaryKey(record);
-    }
+    int updateByPrimaryKey(Ahu1 record);
 
 }

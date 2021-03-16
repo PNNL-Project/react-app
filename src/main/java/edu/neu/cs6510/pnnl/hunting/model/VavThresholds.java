@@ -6,13 +6,13 @@ import lombok.Data;
 public class VavThresholds {
     private Integer id;
 
-    private Integer maximumZoneAirFlow;
+    private Double maximumZoneAirFlow;
 
-    private Integer minimumZoneAirFlow;
+    private Double minimumZoneAirFlow;
 
-    private Integer zoneAirFlowSetPointOffset;
+    private Double zoneAirFlowSetPointOffset;
 
-    private Integer zoneReheatAirFlow;
+    private Double zoneReheatAirFlow;
 
     private Integer ahu1Id;
 

@@ -1,43 +1,19 @@
 package edu.neu.cs6510.pnnl.hunting.service;
 
-import org.springframework.stereotype.Service;
-import javax.annotation.Resource;
-import edu.neu.cs6510.pnnl.hunting.mapper.VavMapper;
 import edu.neu.cs6510.pnnl.hunting.model.Vav;
-@Service
-public class VavService{
+public interface VavService{
 
-    @Resource
-    private VavMapper vavMapper;
 
-    
-    public int deleteByPrimaryKey(Integer id) {
-        return vavMapper.deleteByPrimaryKey(id);
-    }
+    int deleteByPrimaryKey(Integer id);
 
-    
-    public int insert(Vav record) {
-        return vavMapper.insert(record);
-    }
+    int insert(Vav record);
 
-    
-    public int insertSelective(Vav record) {
-        return vavMapper.insertSelective(record);
-    }
+    int insertSelective(Vav record);
 
-    
-    public Vav selectByPrimaryKey(Integer id) {
-        return vavMapper.selectByPrimaryKey(id);
-    }
+    Vav selectByPrimaryKey(Integer id);
 
-    
-    public int updateByPrimaryKeySelective(Vav record) {
-        return vavMapper.updateByPrimaryKeySelective(record);
-    }
+    int updateByPrimaryKeySelective(Vav record);
 
-    
-    public int updateByPrimaryKey(Vav record) {
-        return vavMapper.updateByPrimaryKey(record);
-    }
+    int updateByPrimaryKey(Vav record);
 
 }
