@@ -1,11 +1,13 @@
 package edu.neu.cs6510.pnnl.hunting.mapper;
 
+import edu.neu.cs6510.pnnl.hunting.model.Vav;
 import edu.neu.cs6510.pnnl.hunting.model.VavThresholds;
+import org.apache.ibatis.annotations.Param;
 
 public interface VavThresholdsMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(VavThresholds record);
+    int insert(@Param("vavThresholds") VavThresholds record, @Param("vavTableName") String vavTableName);
 
     int insertSelective(VavThresholds record);
 

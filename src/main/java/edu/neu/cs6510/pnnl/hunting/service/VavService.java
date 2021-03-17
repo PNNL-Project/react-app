@@ -6,7 +6,7 @@ public interface VavService{
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Vav record);
+    int insert(Vav record, String vavTableName);
 
     int insertSelective(Vav record);
 

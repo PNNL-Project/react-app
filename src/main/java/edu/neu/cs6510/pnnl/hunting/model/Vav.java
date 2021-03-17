@@ -6,7 +6,7 @@ import lombok.Data;
 public class Vav {
     private Integer id;
 
-    private Integer zoneAirFlow;
+    private Double zoneAirFlow;
 
     private Double zoneCoolingAirFlowSetPoint;
 

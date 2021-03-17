@@ -6,7 +6,7 @@ public interface VavThresholdsService{
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(VavThresholds record);
+    int insert(VavThresholds record, String vavTableName);
 
     int insertSelective(VavThresholds record);
 

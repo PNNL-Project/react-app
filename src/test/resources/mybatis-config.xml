@@ -2,9 +2,12 @@
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
-    <settings>
-        <setting name="logImpl" value="NO_LOGGING"/>
-    </settings>
+    <typeAliases>
+        <typeAlias alias="ahu1"  type="xyz.drshu.cs6510.dataProcessor.model.Ahu1"/>
+        <typeAlias alias="ahu2"  type="xyz.drshu.cs6510.dataProcessor.model.Ahu2"/>
+        <typeAlias alias="ahu3"  type="xyz.drshu.cs6510.dataProcessor.model.Ahu3"/>
+
+    </typeAliases>
     <environments default="development">
         <environment id="development">
 <!--            <transactionManager type="JDBC"/>-->

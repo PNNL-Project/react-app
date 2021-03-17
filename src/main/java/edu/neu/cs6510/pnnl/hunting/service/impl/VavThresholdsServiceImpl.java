@@ -17,8 +17,8 @@ public class VavThresholdsServiceImpl implements VavThresholdsService{
     }
 
     @Override
-    public int insert(VavThresholds record) {
-        return vavThresholdsMapper.insert(record);
+    public int insert(VavThresholds record, String vavTableName) {
+        return vavThresholdsMapper.insert(record, vavTableName);
     }
 
     @Override

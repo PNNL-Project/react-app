@@ -17,8 +17,8 @@ public class VavServiceImpl implements VavService{
     }
 
     @Override
-    public int insert(Vav record) {
-        return vavMapper.insert(record);
+    public int insert(Vav record, String vavTableName) {
+        return vavMapper.insert(record,vavTableName);
     }
 
     @Override

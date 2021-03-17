@@ -30,15 +30,15 @@
     delete from vav_thresholds
     where ID = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.VavThresholds" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="ID" keyProperty="vavThresholds.id" parameterType="edu.neu.cs6510.pnnl.hunting.model.VavThresholds" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into vav_thresholds (maximum_zone_air_flow, minimum_zone_air_flow, 
+    insert into ${vavTableName} (maximum_zone_air_flow, minimum_zone_air_flow,
       zone_air_flow_set_point_offset, zone_reheat_air_flow, 
       ahu1_id, ahu3_id, vav_name
       )
-    values (#{maximumZoneAirFlow,jdbcType=DOUBLE}, #{minimumZoneAirFlow,jdbcType=DOUBLE}, 
-      #{zoneAirFlowSetPointOffset,jdbcType=DOUBLE}, #{zoneReheatAirFlow,jdbcType=DOUBLE}, 
-      #{ahu1Id,jdbcType=INTEGER}, #{ahu3Id,jdbcType=INTEGER}, #{vavName,jdbcType=VARCHAR}
+    values (#{vavThresholds.maximumZoneAirFlow,jdbcType=DOUBLE}, #{vavThresholds.minimumZoneAirFlow,jdbcType=DOUBLE},
+      #{vavThresholds.zoneAirFlowSetPointOffset,jdbcType=DOUBLE}, #{vavThresholds.zoneReheatAirFlow,jdbcType=DOUBLE},
+      #{vavThresholds.ahu1Id,jdbcType=INTEGER}, #{vavThresholds.ahu3Id,jdbcType=INTEGER}, #{vavThresholds.vavName,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.VavThresholds" useGeneratedKeys="true">

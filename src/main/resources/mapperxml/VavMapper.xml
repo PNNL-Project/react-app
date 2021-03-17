@@ -31,16 +31,16 @@
     delete from vav
     where ID = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav" useGeneratedKeys="true">
+  <insert id="insert" keyColumn="ID" keyProperty="vav.id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav" useGeneratedKeys="true">
     <!--@mbg.generated-->
-    insert into vav (zone_air_flow, zone_cooling_air_flow_set_point, 
+    insert into ${vavTableName} (zone_air_flow, zone_cooling_air_flow_set_point,
       zone_cooling_temperature_set_point, zone_heating_temperature_set_point, 
       zone_temperature, ahu1_id, ahu3_id, 
       vav_name)
-    values (#{zoneAirFlow,jdbcType=INTEGER}, #{zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE}, 
-      #{zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE}, #{zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE}, 
-      #{zoneTemperature,jdbcType=DOUBLE}, #{ahu1Id,jdbcType=INTEGER}, #{ahu3Id,jdbcType=INTEGER}, 
-      #{vavName,jdbcType=VARCHAR})
+    values (#{vav.zoneAirFlow,jdbcType=INTEGER}, #{vav.zoneCoolingAirFlowSetPoint,jdbcType=DOUBLE},
+      #{vav.zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE}, #{vav.zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE},
+      #{vav.zoneTemperature,jdbcType=DOUBLE}, #{vav.ahu1Id,jdbcType=INTEGER}, #{vav.ahu3Id,jdbcType=INTEGER},
+      #{vav.vavName,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Vav" useGeneratedKeys="true">
     <!--@mbg.generated-->
