@@ -14,7 +14,9 @@
     <name>hunting-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>14</java.version>
+        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>14</maven.compiler.source>
     </properties>
     <dependencies>
         <dependency>
