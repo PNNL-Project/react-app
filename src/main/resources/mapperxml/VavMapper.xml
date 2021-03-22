@@ -142,4 +142,69 @@
       vav_name = #{vavName,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="getZoneAirFlowInRange" resultType="java.lang.Double">
+    select ${vavTableName}.zone_air_flow from
+            ${vavTableName}
+                    join
+                    ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
+                    join
+                    seb on seb.ahu1_id = ahu1.ID
+                    join
+                    common on seb.common_id = common.ID
+    WHERE
+            time between ${start} and ${end};
+    </select>
+
+  <select id="getZoneTemperatureInRange" resultType="java.lang.Double">
+    select ${vavTableName}.zone_temperature from
+    ${vavTableName}
+    join
+    ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
+    join
+    seb on seb.ahu1_id = ahu1.ID
+    join
+    common on seb.common_id = common.ID
+    WHERE
+    time between ${start} and ${end};
+  </select>
+
+  <select id="getZoneHeatingTemperatureSetPointInRange" resultType="java.lang.Double">
+    select ${vavTableName}.zone_heating_temperature_set_point from
+    ${vavTableName}
+    join
+    ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
+    join
+    seb on seb.ahu1_id = ahu1.ID
+    join
+    common on seb.common_id = common.ID
+    WHERE
+    time between ${start} and ${end};
+  </select>
+
+  <select id="getZoneCoolingTemperatureSetPointInRange" resultType="java.lang.Double">
+    select ${vavTableName}.zone_cooling_temperature_set_point from
+    ${vavTableName}
+    join
+    ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
+    join
+    seb on seb.ahu1_id = ahu1.ID
+    join
+    common on seb.common_id = common.ID
+    WHERE
+    time between ${start} and ${end};
+  </select>
+
+  <select id="getVavInRange" resultMap="BaseResultMap">
+    select * from
+    ${vavTableName}
+    join
+    ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
+    join
+    seb on seb.ahu1_id = ahu1.ID
+    join
+    common on seb.common_id = common.ID
+    WHERE
+    time between ${start} and ${end};
+  </select>
 </mapper>

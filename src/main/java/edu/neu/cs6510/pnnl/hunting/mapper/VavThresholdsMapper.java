@@ -16,4 +16,8 @@ public interface VavThresholdsMapper {
     int updateByPrimaryKeySelective(VavThresholds record);
 
     int updateByPrimaryKey(VavThresholds record);
+
+    VavThresholds selectByVavTableName(@Param("start") String start, @Param("end") String end,@Param("vavThresholdsName") String vavThresholdsName);
+
+
 }

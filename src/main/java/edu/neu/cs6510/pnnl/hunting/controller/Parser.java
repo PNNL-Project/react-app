@@ -48,6 +48,7 @@ public class Parser {
     private HashMap<String,HashMap<String,Integer>> vavIndex  = new LinkedHashMap<>();
     private HashMap<String,HashMap<String,Integer>> vavThresholdsIndex  = new LinkedHashMap<>();
 
+    private SqlSession sqlSession = null;
 
     public Parser() {
         initData();
@@ -66,6 +67,11 @@ public class Parser {
         vavThresholdsList = new LinkedList<>();
         ahu1VavSet  = new HashSet<>();
         ahu3VavSet  = new HashSet<>();
+        try{
+         sqlSession = initSession();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     private SqlSession initSession() throws IOException {
@@ -180,22 +186,22 @@ public class Parser {
         handleAhu4(records);
         handleAhu1Thresholds(records);
         handleAhu3Thresholds(records);
-        SqlSession sqlSession = null;
-        try{
-            sqlSession = initSession();
-            insertObject(sqlSession);
-            handleSeb(records);
-            handleVav(records);
-            handleThresholdsVav(records);
-            insertSeb(sqlSession);
-            insertVav(sqlSession);
-        }catch (IOException e){
-            e.printStackTrace();
-        }finally {
-            if(sqlSession != null){
-                closeSession(sqlSession);
-            }
-        }
+
+        insertObject(sqlSession);
+        handleSeb(records);
+        handleVav(records);
+        handleThresholdsVav(records);
+        insertSeb(sqlSession);
+        insertVav(sqlSession);
+//        try{
+//
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }finally {
+//            if(sqlSession != null){
+//                closeSession(sqlSession);
+//            }
+//        }
 //        try{
 //            sqlSession = initSession();
 //
@@ -238,6 +244,7 @@ public class Parser {
 //            }
             vavMapper.insert(vav,vavName);
         }
+        vavList.clear();
         for (VavThresholds vavThresholds: vavThresholdsList){
             String vavName = convertToVavThresholdsTableName(vavThresholds.getVavName());
 //            int count = tableUtilMapper.existTable(vavName);
@@ -246,6 +253,7 @@ public class Parser {
 //            }
             vavThresholdsMapper.insert(vavThresholds,vavName);
         }
+        vavThresholdsList.clear();
         sqlSession.commit();
     }
 

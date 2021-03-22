@@ -13,7 +13,7 @@
 <!--            <transactionManager type="JDBC"/>-->
 <!--            <dataSource type="POOLED">-->
 <!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
-<!--                <property name="url" value="jdbc:mysql://database-1.cfuwf2p8gqbo.us-east-1.rds.amazonaws.com:3306/cs6510Cheng"/>-->
+<!--                <property name="url" value="jdbc:mysql://myrds6510.cup5iuwqdfry.us-east-1.rds.amazonaws.com:3306/cs6510Cheng"/>-->
 <!--                <property name="username" value="admin"/>-->
 <!--                &lt;!&ndash; Use plain text save password FIXME&ndash;&gt;-->
 <!--                <property name="password" value="11111111"/>-->

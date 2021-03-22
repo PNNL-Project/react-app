@@ -131,4 +131,11 @@
       vav_name = #{vavName,jdbcType=VARCHAR}
     where ID = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByVavTableName" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from ${vavThresholdsName}
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
 </mapper>
