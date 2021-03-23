@@ -5,6 +5,8 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.List;
+
 public class TableUtilMapperTest {
     private static TableUtilMapper mapper;
 
@@ -20,6 +22,16 @@ public class TableUtilMapperTest {
         int i = mapper.existTable("vav101");
         System.out.println(i);
     }
+
+    @Test
+    public void testGetAllTable(){
+        List<String> allTables = mapper.getAllTable();
+        for(String table:allTables){
+            System.out.println(table);
+        }
+    }
+
+
 
 
 }

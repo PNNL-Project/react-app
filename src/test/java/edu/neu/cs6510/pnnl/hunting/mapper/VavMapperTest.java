@@ -1,11 +1,13 @@
 package edu.neu.cs6510.pnnl.hunting.mapper;
 
 import edu.neu.cs6510.pnnl.hunting.model.Vav;
+import edu.neu.cs6510.pnnl.hunting.utils.DateUtil;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
 public class VavMapperTest {
@@ -33,7 +35,11 @@ public class VavMapperTest {
 
     @Test
     public void testGetVavInRange() {
-        List<Vav> range = mapper.getVavInRange("'2018-11-30 17:23:00'", "'2018-12-01 01:18:00'", "vav100");
+        List<Vav> range = mapper.getVav1InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav100");
+        for (Vav vav:range){
+            System.out.println(vav);
+        }
+        range = mapper.getVav3InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav102");
         for (Vav vav:range){
             System.out.println(vav);
         }
