@@ -1,6 +1,7 @@
 package edu.neu.cs6510.pnnl.hunting.utils;
 
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
@@ -26,8 +27,10 @@ public class DateUtil {
     final static Set<LocalDate> HOLIDAYS = Set.of(
 
     );
+    private static final String WORK_HOUR_START_TIME = "06:00:00";
+    private static final String WORK_HOUR_END_TIME = "18:00:00";
 
-   private DateUtil(){}
+    private DateUtil(){}
 
    public static Date convertStringToDate(String dateString){
        Date date = null;
@@ -69,5 +72,46 @@ public class DateUtil {
         LocalDate startDate = today.plusDays(-dayOfWeek);
         return listAllBusinessDayInRange(startDate,today);
     }
+
+    public static boolean isWorkHour(Date date) {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        int week = c.get(Calendar.DAY_OF_WEEK);
+        int hour = c.get(Calendar.HOUR_OF_DAY);
+        return week >= 2 && week<=6 && hour>=6 && hour<18;
+    }
+
+
+    public static Date getWorkHourStartTime(Date date){
+        return getWorkTime(date,WORK_HOUR_START_TIME);
+    }
+
+    public static Date getWorkHourEndTime(Date date){
+        return getWorkTime(date,WORK_HOUR_END_TIME);
+    }
+
+    public static Date getAnyWorkHourTime(Date date, int hour){
+        if(hour>=6 && hour<=18){
+            return getWorkTime(date, hour +":00:00");
+        }else {
+            // FIXME add an exception or logging
+            return null;
+        }
+    }
+
+    private static Date getWorkTime(Date date, String hourString) {
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+        simpleDateFormat.applyPattern("yyyy-MM-dd");
+        String timeStr = simpleDateFormat.format(date) + " " + hourString;
+        Date workHourStart = null;
+        try {
+            workHourStart = dateFormat.parse(timeStr);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return workHourStart;
+    }
+
 
 }
