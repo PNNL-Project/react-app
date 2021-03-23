@@ -1,6 +1,8 @@
 package edu.neu.cs6510.pnnl.hunting.controller;
 
 
+import edu.neu.cs6510.pnnl.hunting.h2mapper.VavH2Mapper;
+import edu.neu.cs6510.pnnl.hunting.job.HuntingJob;
 import edu.neu.cs6510.pnnl.hunting.model.Vav;
 import edu.neu.cs6510.pnnl.hunting.service.CommonService;
 import edu.neu.cs6510.pnnl.hunting.service.VavService;
@@ -13,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
+
 import java.util.List;
 
 @RestController
@@ -28,6 +30,12 @@ public class HuntingController {
 
     @Autowired
     CommonService commonService;
+
+    @Autowired
+    HuntingJob huntingJob;
+
+    @Autowired
+    VavH2Mapper h2Mapper;
 
     @GetMapping("/today")
     public R todayHunting(){
@@ -54,6 +62,13 @@ public class HuntingController {
     }
 
 
+
+    @GetMapping("/test2")
+    public R testHuntingJob(){
+        List<Vav> allVav = h2Mapper.getAllVav();
+
+        return R.ok(allVav.toString());
+    }
 
 
 }

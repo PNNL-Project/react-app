@@ -24,8 +24,8 @@ public class DataProcessorApp {
     public static void main(String[] args) {
         // FIXME Avoid hard code style
 //        Path path = Paths.get("src/main/resources/seb_processed_data.csv");
-        String CSVPathName = "src/main/resources/static/seb_processed_data_sample_2.csv";
-//        String CSVPathName = "/Users/Shu/Downloads/seb/seb.processed/seb_processed_data.csv";
+//        String CSVPathName = "src/main/resources/static/seb_processed_data_sample_2.csv";
+        String CSVPathName = "src/main/resources/seb_processed_data_sample.csv";
         int count = countLineNumber(CSVPathName);
 
 
