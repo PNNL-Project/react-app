@@ -35,4 +35,10 @@
     vav_name                       varchar(60)      null
     )
   </update>
+
+  <select id="getAllTable" resultType="java.lang.String">
+    select TABLE_NAME
+    from
+      information_schema.TABLES
+    </select>
 </mapper>

@@ -195,8 +195,8 @@
     time between ${start} and ${end};
   </select>
 
-  <select id="getVavInRange" resultMap="BaseResultMap">
-    select * from
+  <select id="getVav1InRange" resultMap="BaseResultMap">
+    select distinct * from
     ${vavTableName}
     join
     ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
@@ -204,7 +204,37 @@
     seb on seb.ahu1_id = ahu1.ID
     join
     common on seb.common_id = common.ID
-    WHERE
-    time between ${start} and ${end};
+    WHERE time between ${start} and ${end};
+  </select>
+
+  <select id="getVav3InRange" resultMap="BaseResultMap">
+    select distinct * from
+    ${vavTableName}
+    join
+    ahu3 on ${vavTableName}.ahu3_id = ahu3.ID
+    join
+    seb on seb.ahu3_id = ahu3.ID
+    join
+    common on seb.common_id = common.ID
+    WHERE time between ${start} and ${end};
+  </select>
+
+  <resultMap id="VavMap" type="edu.neu.cs6510.pnnl.hunting.model.Vav">
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="zone_air_flow" jdbcType="INTEGER" property="zoneAirFlow" />
+    <result column="zone_cooling_air_flow_set_point" jdbcType="DOUBLE" property="zoneCoolingAirFlowSetPoint" />
+    <result column="zone_cooling_temperature_set_point" jdbcType="DOUBLE" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="DOUBLE" property="zoneHeatingTemperatureSetPoint" />
+    <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
+    <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
+    <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
+    <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
+
+
+  </resultMap>
+
+  <select id="getAllVav" resultMap="BaseResultMap">
+    select distinct * from
+    ${vavTableName}
   </select>
 </mapper>
