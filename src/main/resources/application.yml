@@ -1,0 +1,33 @@
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+#  mapperLocations: classpath:/mapperxml/**/*.xml
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    jdbc-url: jdbc:mysql://localhost:3306/huntingService-Dev
+    username: root
+    password: qwer1234
+    h2:
+      driver-class-name: org.h2.Driver
+      schema:
+        - classpath:db/schema-h2.sql
+      jdbc-url: jdbc:h2:mem:h2_data
+      username: root
+      password: a123456
+      initialization-mode: always
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+
+
+invoke:
+  schema:
+    location: db/schema-h2.sql
+  data:
+    location:
