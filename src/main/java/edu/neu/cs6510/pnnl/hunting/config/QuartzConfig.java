@@ -1,7 +1,9 @@
 package edu.neu.cs6510.pnnl.hunting.config;
 
+import edu.neu.cs6510.pnnl.hunting.h2mapper.UpdateInfoMapper;
 import edu.neu.cs6510.pnnl.hunting.h2mapper.VavH2Mapper;
 import edu.neu.cs6510.pnnl.hunting.job.HuntingJob;
+import edu.neu.cs6510.pnnl.hunting.service.TableUtilService;
 import edu.neu.cs6510.pnnl.hunting.service.VavService;
 import org.quartz.CronTrigger;
 import org.quartz.JobDataMap;
@@ -18,21 +20,29 @@ import java.util.Objects;
 public class QuartzConfig {
 
 
-    private static final String CRON_EXPRESSION = "0/5 * * ? * * *";
+//    private static final String CRON_EXPRESSION = "0/30 * * ? * * *";
+    private static final String CRON_EXPRESSION = " 0/5 * 6-18 ? * MON,TUE,WED,THU,FRI *";
     @Autowired
     VavService vavService;
 
     @Autowired
     VavH2Mapper h2Mapper;
 
+    @Autowired
+    TableUtilService tableUtilService;
+
+    @Autowired
+    UpdateInfoMapper updateInfoMapper;
+
     @Bean
     JobDetailFactoryBean jobDetail() {
         JobDetailFactoryBean bean = new JobDetailFactoryBean();
         bean.setJobClass(HuntingJob.class);
         JobDataMap jobDataMap = new JobDataMap();
-        jobDataMap.put("service",vavService);
+        jobDataMap.put("vavService",vavService);
+        jobDataMap.put("tableUtilService",tableUtilService);
+        jobDataMap.put("updateInfoMapper",updateInfoMapper);
         jobDataMap.put("mapper",h2Mapper);
-        jobDataMap.put("name","test");
         bean.setJobDataMap(jobDataMap);
         bean.setDurability(true);
         return bean;

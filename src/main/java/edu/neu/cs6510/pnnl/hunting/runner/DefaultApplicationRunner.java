@@ -51,6 +51,6 @@ public class DefaultApplicationRunner implements ApplicationRunner, Ordered {
 
     @Override
     public int getOrder() {
-        return 100;
+        return 1000;
     }
 }
