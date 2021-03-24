@@ -1,9 +1,6 @@
 package edu.neu.cs6510.pnnl.hunting.utils;
 
-import org.ehcache.CacheManager;
-import org.ehcache.config.Configuration;
-import org.ehcache.config.builders.CacheManagerBuilder;
-import org.ehcache.xml.XmlConfiguration;
+
 import org.junit.jupiter.api.Test;
 
 import java.net.URL;
@@ -28,10 +25,4 @@ class MapCacheTest {
 
     }
 
-    @Test
-    public void testEhcache() {
-        URL myUrl = getClass().getResource("/my-config.xml");
-        Configuration xmlConfig = new XmlConfiguration(myUrl);
-        CacheManager myCacheManager = CacheManagerBuilder.newCacheManager(xmlConfig);
-    }
 }

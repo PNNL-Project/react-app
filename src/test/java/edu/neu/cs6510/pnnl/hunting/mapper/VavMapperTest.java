@@ -35,11 +35,11 @@ public class VavMapperTest {
 
     @Test
     public void testGetVavInRange() {
-        List<Vav> range = mapper.getVav1InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav100");
+        List<Vav> range = mapper.getVav1InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav100","vav100_thresholds");
         for (Vav vav:range){
             System.out.println(vav);
         }
-        range = mapper.getVav3InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav102");
+        range = mapper.getVav3InRange("'2018-11-30 06:00:00'", "'2018-11-30 17:50:00'", "vav102","vav100_thresholds");
         for (Vav vav:range){
             System.out.println(vav);
         }
