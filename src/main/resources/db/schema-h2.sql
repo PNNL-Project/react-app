@@ -13,3 +13,14 @@ create table vav
     vav_name                           varchar(60) null
 );
 
+drop table if exists updateInfo;
+
+create table updateInfo
+(
+    vav_name varchar(60) not null,
+    update_time datetime null,
+    constraint updateInfo_pk
+        primary key (vav_name)
+);
+
+
