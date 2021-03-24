@@ -4,6 +4,7 @@ package edu.neu.cs6510.pnnl.hunting.controller;
 import edu.neu.cs6510.pnnl.hunting.h2mapper.VavH2Mapper;
 import edu.neu.cs6510.pnnl.hunting.job.HuntingJob;
 import edu.neu.cs6510.pnnl.hunting.model.Vav;
+import edu.neu.cs6510.pnnl.hunting.model.VavAlert;
 import edu.neu.cs6510.pnnl.hunting.service.CommonService;
 import edu.neu.cs6510.pnnl.hunting.service.VavService;
 import edu.neu.cs6510.pnnl.hunting.service.VavThresholdsService;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @RestController
@@ -39,8 +41,12 @@ public class HuntingController {
 
     @GetMapping("/today")
     public R todayHunting(){
-
-        return R.ok("Test");
+        List<Vav> allVav = h2Mapper.getAllVav();
+        List<VavAlert> allRes = new LinkedList<>();
+        for(Vav vav:allVav){
+            allRes.add(new VavAlert(vav));
+        }
+        return R.ok(allRes.toString());
     }
 
     @GetMapping("/yesterday")
@@ -60,15 +66,4 @@ public class HuntingController {
         List<Vav> vavList = vavService.getVavInRange(DateUtil.convertStringToDate(startTime), DateUtil.convertStringToDate(endTime), vavName);
         return R.ok(vavList.toString());
     }
-
-
-
-    @GetMapping("/test2")
-    public R testHuntingJob(){
-        List<Vav> allVav = h2Mapper.getAllVav();
-
-        return R.ok(allVav.toString());
-    }
-
-
 }
