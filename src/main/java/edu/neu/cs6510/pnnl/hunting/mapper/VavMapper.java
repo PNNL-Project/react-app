@@ -27,9 +27,15 @@ public interface VavMapper {
 
     List<Double> getZoneCoolingTemperatureSetPointInRange(@Param("start") String start, @Param("end") String end, @Param("vavTableName") String vavTableName);
 
-    List<Vav> getVav1InRange(@Param("start") String start, @Param("end") String end, @Param("vavTableName") String vavTableName);
+    List<Vav> getVav1InRange(@Param("start") String start,
+                             @Param("end") String end,
+                             @Param("vavTableName") String vavTableName,
+                             @Param("vavThresholdsTableName") String vavThresholdsTableName);
 
-    List<Vav> getVav3InRange(@Param("start") String start, @Param("end") String end, @Param("vavTableName") String vavTableName);
+    List<Vav> getVav3InRange(@Param("start") String start,
+                             @Param("end") String end,
+                             @Param("vavTableName") String vavTableName,
+                             @Param("vavThresholdsTableName") String vavThresholdsTableName);
 
     List<Vav> getAllVav(@Param("vavTableName") String vavTableName);
 }

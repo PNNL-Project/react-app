@@ -9,4 +9,6 @@ public interface TableUtilService {
     List<String> getAllTable();
 
     List<String> getAllVavTable();
+
+    List<String> getAllVavThresholdTable();
 }

@@ -195,8 +195,8 @@
     time between ${start} and ${end};
   </select>
 
-  <select id="getVav1InRange" resultMap="BaseResultMap">
-    select distinct * from
+  <select id="getVav1InRange" resultMap="VavCommonMap">
+    select  ${vavTableName}.*, common.*,${vavThresholdsTableName}.* from
     ${vavTableName}
     join
     ahu1 on ${vavTableName}.ahu1_id = ahu1.ID
@@ -204,11 +204,13 @@
     seb on seb.ahu1_id = ahu1.ID
     join
     common on seb.common_id = common.ID
+    join
+    ${vavThresholdsTableName} on ${vavThresholdsTableName}.ahu1_id = ahu1.ID
     WHERE time between ${start} and ${end};
   </select>
 
-  <select id="getVav3InRange" resultMap="BaseResultMap">
-    select distinct * from
+  <select id="getVav3InRange" resultMap="VavCommonMap">
+    select  ${vavTableName}.*, common.* from
     ${vavTableName}
     join
     ahu3 on ${vavTableName}.ahu3_id = ahu3.ID
@@ -216,10 +218,12 @@
     seb on seb.ahu3_id = ahu3.ID
     join
     common on seb.common_id = common.ID
+    join
+    ${vavThresholdsTableName} on ${vavThresholdsTableName}.ahu3_id = ahu3.ID
     WHERE time between ${start} and ${end};
   </select>
 
-  <resultMap id="VavMap" type="edu.neu.cs6510.pnnl.hunting.model.Vav">
+  <resultMap id="VavCommonMap" type="edu.neu.cs6510.pnnl.hunting.model.Vav">
     <id column="ID" jdbcType="INTEGER" property="id" />
     <result column="zone_air_flow" jdbcType="INTEGER" property="zoneAirFlow" />
     <result column="zone_cooling_air_flow_set_point" jdbcType="DOUBLE" property="zoneCoolingAirFlowSetPoint" />
@@ -229,8 +233,26 @@
     <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
     <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
     <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
-
-
+    <association property="common" column="id" javaType="edu.neu.cs6510.pnnl.hunting.model.Common">
+      <id column="ID" jdbcType="INTEGER" property="id" />
+      <result column="external_temperature" jdbcType="DOUBLE" property="externalTemperature" />
+      <result column="is_summer" jdbcType="BOOLEAN" property="isSummer" />
+      <result column="is_weekday" jdbcType="BOOLEAN" property="isWeekday" />
+      <result column="is_working_hours" jdbcType="BOOLEAN" property="isWorkingHours" />
+      <result column="cooling_consumption" jdbcType="DOUBLE" property="coolingConsumption" />
+      <result column="heating_consumption" jdbcType="DOUBLE" property="heatingConsumption" />
+      <result column="time" jdbcType="TIMESTAMP" property="time" />
+    </association>
+    <association property="threshold" column="id" javaType="edu.neu.cs6510.pnnl.hunting.model.VavThresholds">
+      <id column="ID" jdbcType="INTEGER" property="id" />
+      <result column="maximum_zone_air_flow" jdbcType="DOUBLE" property="maximumZoneAirFlow" />
+      <result column="minimum_zone_air_flow" jdbcType="DOUBLE" property="minimumZoneAirFlow" />
+      <result column="zone_air_flow_set_point_offset" jdbcType="DOUBLE" property="zoneAirFlowSetPointOffset" />
+      <result column="zone_reheat_air_flow" jdbcType="DOUBLE" property="zoneReheatAirFlow" />
+      <result column="ahu1_id" jdbcType="INTEGER" property="ahu1Id" />
+      <result column="ahu3_id" jdbcType="INTEGER" property="ahu3Id" />
+      <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
+    </association>
   </resultMap>
 
   <select id="getAllVav" resultMap="BaseResultMap">

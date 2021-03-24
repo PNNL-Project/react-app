@@ -12,6 +12,7 @@ import java.util.stream.Collectors;
 public class TableUtilServiceImpl implements TableUtilService {
 
     private static final String VAV_REGEX = "vav\\d{3}[a-z]?";
+    private static final String VAV_THRESHOLD_REGEX = "vav\\d{3}[a-z]?_threshold";
 
     @Resource
     TableUtilMapper mapper;
@@ -26,6 +27,14 @@ public class TableUtilServiceImpl implements TableUtilService {
         List<String> allTables = mapper.getAllTable();
         return allTables.stream()
                 .filter(s->s.matches(VAV_REGEX))
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<String> getAllVavThresholdTable() {
+        List<String> allTables = mapper.getAllTable();
+        return allTables.stream()
+                .filter(s->s.matches(VAV_THRESHOLD_REGEX))
                 .collect(Collectors.toList());
     }
 }

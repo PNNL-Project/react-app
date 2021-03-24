@@ -82,24 +82,27 @@ public class VavServiceImpl implements VavService{
         String endString = addQuote(end);
         return vavMapper.getZoneHeatingTemperatureSetPointInRange(startString,endString,vavTableName);
     }
-//    @Cacheable("vavs")
+
     @Override
     public List<Vav> getVavInRange(Date start, Date end, String vavTableName) {
         // Add single quotation marks before and after time string
         String startString = addQuote(start);
         String endString = addQuote(end);
         if(vav1Set.contains(vavTableName)){
-            return vavMapper.getVav1InRange(startString, endString, vavTableName);
+            return vavMapper.getVav1InRange(startString, endString, vavTableName,getThresholdsName(vavTableName));
         }else if(vav3Set.contains(vavTableName)) {
-            return vavMapper.getVav3InRange(startString, endString, vavTableName);
+            return vavMapper.getVav3InRange(startString, endString, vavTableName,getThresholdsName(vavTableName));
         }else {
             return null;
         }
-
     }
 
     private String addQuote(Date date) {
         return "'" + DateUtil.convertDateToString(date) + "'";
+    }
+
+    private String getThresholdsName(String vavName){
+        return vavName+"_thresholds";
     }
 
 }

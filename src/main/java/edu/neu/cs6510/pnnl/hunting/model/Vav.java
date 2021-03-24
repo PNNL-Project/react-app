@@ -2,6 +2,8 @@ package edu.neu.cs6510.pnnl.hunting.model;
 
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 public class Vav {
     private Integer id;
@@ -21,4 +23,9 @@ public class Vav {
     private Integer ahu3Id;
 
     private String vavName;
+
+    private Common common;
+
+    private VavThresholds threshold;
+
 }
