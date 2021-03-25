@@ -55,7 +55,7 @@ public class HuntingController {
             );
             response.put(DateUtil.convertDateToString(alert.getTime()),new ArrayList<>(vavAlerts));
         }
-        return R.ok(response.toString());
+        return R.ok(response);
     }
 
     @GetMapping("/yesterday")

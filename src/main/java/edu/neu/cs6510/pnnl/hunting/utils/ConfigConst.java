@@ -9,7 +9,8 @@ public class ConfigConst {
     /**
      * 2 years 4 months 21 days  12:38:11
      */
-    public static long TIME_SHIFT = 72707891000L;
+//    public static long TIME_SHIFT = 72707891000L;
+    public static long TIME_SHIFT = 0L;
     public static int WARNING = 6;
 
 }

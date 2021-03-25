@@ -2,9 +2,11 @@
 
 package edu.neu.cs6510.pnnl.hunting.utils;
 
+import edu.neu.cs6510.pnnl.hunting.model.VavAlert;
 import org.apache.http.HttpStatus;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -49,6 +51,12 @@ public class R extends HashMap<String, Object> {
 	
 	public static R ok() {
 		return new R();
+	}
+
+	public static R ok(HashMap<String, List<VavAlert>> response) {
+		R r = new R();
+		r.putAll(response);
+		return r;
 	}
 
 	@Override
