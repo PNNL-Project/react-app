@@ -11,7 +11,6 @@ public interface AlertMapper {
 
     int insert(@Param("alert") Alert record);
 
-
     List<Alert> getAllAlert();
 
 }

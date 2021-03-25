@@ -1,6 +1,6 @@
 create table alert
 (
-    id   int      not null
+    id   int auto_increment
         primary key,
     time datetime null
 );

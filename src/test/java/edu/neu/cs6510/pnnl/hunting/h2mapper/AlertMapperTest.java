@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Date;
 import java.util.List;
 
 public class AlertMapperTest {
@@ -22,5 +23,12 @@ public class AlertMapperTest {
     public void testGetAllAlert() {
         List<Alert> allAlert = mapper.getAllAlert();
         System.out.println(allAlert);
+    }
+
+    @Test
+    public void testInsert() {
+        Alert alert = new Alert();
+        alert.setTime(new Date());
+        mapper.insert(alert);
     }
 }

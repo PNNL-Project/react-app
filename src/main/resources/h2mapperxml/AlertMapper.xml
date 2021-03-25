@@ -3,12 +3,12 @@
 <mapper namespace="edu.neu.cs6510.pnnl.hunting.h2mapper.AlertMapper">
   <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Alert">
     <!--@Table alert-->
-    <id column="ID" jdbcType="INTEGER" property="id" />
+    <id column="id" jdbcType="INTEGER" property="id" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
   </resultMap>
 
-  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Alert" useGeneratedKeys="true">
-    insert into alert
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Alert" useGeneratedKeys="true">
+    insert into alert(time)
     values (#{alert.time,jdbcType=TIMESTAMP})
   </insert>
 

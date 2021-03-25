@@ -50,6 +50,7 @@ public class HuntingJob extends QuartzJobBean {
     private void checkTemperature(){
 
         Date now = new Date(System.currentTimeMillis() - TIME_SHIFT);
+        System.out.println(DateUtil.convertDateToString(now));
         for(String vavName:vavSet){
             Date startTime = null;
             Date endTime = null;
@@ -78,7 +79,7 @@ public class HuntingJob extends QuartzJobBean {
         List<Vav> vavInRange = vavService.getVavInRange(startTime, endTime, vavName);
         for(Vav vav: vavInRange){
             if(isAnomaly(vav)) {
-                if(largeThanOneHour(deque.getFirst(),vav)){
+                if(!deque.isEmpty() && largeThanOneHour(deque.getFirst(),vav)){
                     if(deque.size() >= WARNING){
                         sendAlert(deque.getLast().getCommon().getTime());
                     }
@@ -117,7 +118,7 @@ public class HuntingJob extends QuartzJobBean {
     }
 
     private boolean largeThanOneHour(Vav first, Vav last) {
-        return first.getCommon().getTime().getTime() - last.getCommon().getTime().getTime() > ONE_HOUR;
+        return Math.abs(first.getCommon().getTime().getTime() - last.getCommon().getTime().getTime()) > ONE_HOUR;
     }
 
     private void getAllVav(){
