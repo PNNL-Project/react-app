@@ -1,26 +1,27 @@
-drop table if exists vav;
-create table vav
+create table alert
 (
-    ID                                 int auto_increment
+    id   int      not null
         primary key,
-    zone_air_flow                      int         null,
+    time datetime null
+);
+
+create table updateInfo
+(
+    vav_name    varchar(60) not null
+        primary key,
+    update_time datetime    null
+);
+
+create table vav_alert
+(
+    zone_air_flow                      double      null,
     zone_cooling_air_flow_set_point    double      null,
     zone_cooling_temperature_set_point double      null,
     zone_heating_temperature_set_point double      null,
     zone_temperature                   double      null,
-    ahu1_id                            int         null,
-    ahu3_id                            int         null,
-    vav_name                           varchar(60) null
+    vav_name                           varchar(60) null,
+    time                               datetime    null,
+    maximum_zone_air_flow              double      null,
+    minimum_zone_air_flow              double      null
 );
-
-drop table if exists updateInfo;
-
-create table updateInfo
-(
-    vav_name varchar(60) not null,
-    update_time datetime null,
-    constraint updateInfo_pk
-        primary key (vav_name)
-);
-
 
