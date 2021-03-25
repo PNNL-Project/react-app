@@ -1,8 +1,10 @@
 package edu.neu.cs6510.pnnl.hunting.controller;
 
 
-import edu.neu.cs6510.pnnl.hunting.h2mapper.VavH2Mapper;
+import edu.neu.cs6510.pnnl.hunting.h2mapper.AlertMapper;
+import edu.neu.cs6510.pnnl.hunting.h2mapper.VavAlertMapper;
 import edu.neu.cs6510.pnnl.hunting.job.HuntingJob;
+import edu.neu.cs6510.pnnl.hunting.model.Alert;
 import edu.neu.cs6510.pnnl.hunting.model.Vav;
 import edu.neu.cs6510.pnnl.hunting.model.VavAlert;
 import edu.neu.cs6510.pnnl.hunting.service.CommonService;
@@ -17,8 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @RestController
 @RequestMapping("hunting/hunting")
@@ -37,22 +38,28 @@ public class HuntingController {
     HuntingJob huntingJob;
 
     @Autowired
-    VavH2Mapper h2Mapper;
+    AlertMapper alertMapper;
+
+    @Autowired
+    VavAlertMapper vavAlertMapper;
 
     @GetMapping("/today")
     public R todayHunting(){
-        List<Vav> allVav = h2Mapper.getAllVav();
-        List<VavAlert> allRes = new LinkedList<>();
-        for(Vav vav:allVav){
-            allRes.add(new VavAlert(vav));
+        HashMap<String,List<VavAlert>> response = new HashMap<>();
+        List<Alert> allAlert = alertMapper.getAllAlert();
+        for(Alert alert:allAlert){
+            Date alertTime = alert.getTime();
+            List<VavAlert> vavAlerts = vavAlertMapper.getVavAlertInRange(
+                    getQueryDateString(DateUtil.getOneHourBeforeTime(alertTime)),
+                    getQueryDateString(alertTime)
+            );
+            response.put(DateUtil.convertDateToString(alert.getTime()),new ArrayList<>(vavAlerts));
         }
-        return R.ok(allRes.toString());
+        return R.ok(response.toString());
     }
 
     @GetMapping("/yesterday")
     public R yesterdayHunting(){
-        Vav vav = vavService.selectByPrimaryKey(1);
-        System.out.println(vav);
         return R.ok("Test");
     }
 
@@ -66,4 +73,9 @@ public class HuntingController {
         List<Vav> vavList = vavService.getVavInRange(DateUtil.convertStringToDate(startTime), DateUtil.convertStringToDate(endTime), vavName);
         return R.ok(vavList.toString());
     }
+
+    private String getQueryDateString(Date date) {
+        return "'" + DateUtil.convertDateToString(date) + "'";
+    }
+
 }

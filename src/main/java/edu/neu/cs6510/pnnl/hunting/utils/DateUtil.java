@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
+import static edu.neu.cs6510.pnnl.hunting.utils.ConfigConst.*;
 import static java.time.DayOfWeek.*;
 
 public class DateUtil {
@@ -27,8 +27,6 @@ public class DateUtil {
     final static Set<LocalDate> HOLIDAYS = Set.of(
 
     );
-    private static final String WORK_HOUR_START_TIME = "06:00:00";
-    private static final String WORK_HOUR_END_TIME = "18:00:00";
 
     private DateUtil(){}
 
@@ -81,7 +79,9 @@ public class DateUtil {
         return week >= 2 && week<=6 && hour>=6 && hour<18;
     }
 
-
+    public static Date getOneHourBeforeTime(Date date){
+        return new Date(date.getTime() - ONE_HOUR);
+    }
     public static Date getWorkHourStartTime(Date date){
         return getWorkTime(date,WORK_HOUR_START_TIME);
     }
