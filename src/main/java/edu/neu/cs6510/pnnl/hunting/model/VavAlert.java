@@ -1,12 +1,10 @@
 package edu.neu.cs6510.pnnl.hunting.model;
 
-import lombok.Data;
-
 import java.util.Date;
+import lombok.Data;
 
 @Data
 public class VavAlert {
-
     private Double zoneAirFlow;
 
     private Double zoneCoolingAirFlowSetPoint;
@@ -24,6 +22,9 @@ public class VavAlert {
     private Double maximumZoneAirFlow;
 
     private Double minimumZoneAirFlow;
+
+    public VavAlert() {
+    }
 
     public VavAlert(Vav vav) {
         this.zoneAirFlow = vav.getZoneAirFlow();
