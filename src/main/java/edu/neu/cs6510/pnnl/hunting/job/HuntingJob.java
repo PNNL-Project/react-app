@@ -39,7 +39,6 @@ public class HuntingJob extends QuartzJobBean {
 
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-        // TODO Check the anomaly data here, add them into H2 Database
         getAllVav();
         System.out.println("Get All Vav");
         checkTemperature();
@@ -83,7 +82,7 @@ public class HuntingJob extends QuartzJobBean {
                     if(deque.size() >= WARNING){
                         sendAlert(deque.getLast().getCommon().getTime());
                     }
-                    while (deque.size() >= WARNING && largeThanOneHour(deque.getFirst(), vav)) {
+                    while (!deque.isEmpty() && largeThanOneHour(deque.getFirst(), vav)) {
                         vavAlertMapper.insertSelective(new VavAlert(Objects.requireNonNull(deque.pollFirst())));
                     }
                 }
