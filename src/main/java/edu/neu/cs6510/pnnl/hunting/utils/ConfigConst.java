@@ -11,6 +11,6 @@ public class ConfigConst {
      */
 //    public static long TIME_SHIFT = 72707891000L;
     public static long TIME_SHIFT = 0L;
-    public static int WARNING = 6;
+    public static int WARNING = 12;
 
 }

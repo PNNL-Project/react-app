@@ -1,9 +1,6 @@
 package edu.neu.cs6510.pnnl.hunting.config;
 
-import edu.neu.cs6510.pnnl.hunting.h2mapper.AlertMapper;
-import edu.neu.cs6510.pnnl.hunting.h2mapper.UpdateInfoMapper;
-import edu.neu.cs6510.pnnl.hunting.h2mapper.VavAlertMapper;
-import edu.neu.cs6510.pnnl.hunting.h2mapper.VavH2Mapper;
+import edu.neu.cs6510.pnnl.hunting.h2mapper.*;
 import edu.neu.cs6510.pnnl.hunting.job.HuntingJob;
 import edu.neu.cs6510.pnnl.hunting.service.TableUtilService;
 import edu.neu.cs6510.pnnl.hunting.service.VavService;
@@ -23,7 +20,7 @@ public class QuartzConfig {
 
 
 //    private static final String CRON_EXPRESSION = "0/30 * * ? * * *";
-    private static final String CRON_EXPRESSION = " 0/45 * 6-18 ? * MON,TUE,WED,THU,FRI *";
+    private static final String CRON_EXPRESSION = " 0/45 * 6-20 ? * MON,TUE,WED,THU,FRI *";
     @Autowired
     VavService vavService;
 
@@ -32,6 +29,9 @@ public class QuartzConfig {
 
     @Autowired
     TableUtilService tableUtilService;
+
+    @Autowired
+    TableUtilH2Mapper tableUtilH2Mapper;
 
     @Autowired
     UpdateInfoMapper updateInfoMapper;
@@ -49,6 +49,7 @@ public class QuartzConfig {
         jobDataMap.put("updateInfoMapper",updateInfoMapper);
         jobDataMap.put("alertMapper",alertMapper);
         jobDataMap.put("vavAlertMapper",vavAlertMapper);
+        jobDataMap.put("tableUtilH2Mapper",tableUtilH2Mapper);
         bean.setJobDataMap(jobDataMap);
         bean.setDurability(true);
         return bean;
