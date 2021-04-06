@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.h2mapper.TableUtilH2Mapper">
+    <select id="existTable" parameterType="String" resultType="Integer">
+        select count(*)
+        from information_schema.TABLES
+        where LCASE(table_name)=#{tableName}
+    </select>
+
+    <update id="createNewVavAlertTable" parameterType="String">
+        CREATE TABLE ${vavTableName} (
+        ID                                 int auto_increment
+        primary key,
+        zone_cooling_temperature_set_point double      null,
+        zone_heating_temperature_set_point double      null,
+        zone_temperature                   double      null,
+        vav_name                           varchar(60) null,
+        time                               datetime    null)
+    </update>
+
+    <select id="getAllTable" resultType="java.lang.String">
+        select TABLE_NAME
+        from
+                information_schema.TABLES
+
+    </select>
+
+
+</mapper>
+
