@@ -5,9 +5,6 @@ import lombok.Data;
 
 @Data
 public class VavAlert {
-    private Double zoneAirFlow;
-
-    private Double zoneCoolingAirFlowSetPoint;
 
     private Double zoneCoolingTemperatureSetPoint;
 
@@ -19,27 +16,18 @@ public class VavAlert {
 
     private Date time;
 
-    private Double maximumZoneAirFlow;
 
-    private Double minimumZoneAirFlow;
 
     public VavAlert() {
     }
 
     public VavAlert(Vav vav) {
-        this.zoneAirFlow = vav.getZoneAirFlow();
-        this.zoneCoolingAirFlowSetPoint = vav.getZoneCoolingAirFlowSetPoint();
         this.zoneCoolingTemperatureSetPoint = vav.getZoneCoolingTemperatureSetPoint();
         this.zoneHeatingTemperatureSetPoint = vav.getZoneHeatingTemperatureSetPoint();
         this.zoneTemperature = vav.getZoneTemperature();
         this.vavName = vav.getVavName();
         if(vav.getCommon() != null){
             this.time = vav.getCommon().getTime();
-        }
-
-        if(vav.getThreshold() != null){
-            this.maximumZoneAirFlow = vav.getThreshold().getMaximumZoneAirFlow();
-            this.minimumZoneAirFlow = vav.getThreshold().getMinimumZoneAirFlow();
         }
     }
 }

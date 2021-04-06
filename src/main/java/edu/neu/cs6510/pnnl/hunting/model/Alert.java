@@ -11,5 +11,7 @@ public class Alert {
 
     private Date time;
 
+    private String vavName;
+
 
 }

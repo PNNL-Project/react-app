@@ -5,11 +5,12 @@
     <!--@Table alert-->
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
   </resultMap>
 
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Alert" useGeneratedKeys="true">
-    insert into alert(time)
-    values (#{alert.time,jdbcType=TIMESTAMP})
+    insert into alert(time,vav_name)
+    values (#{alert.time,jdbcType=TIMESTAMP}, #{alert.vavName,jdbcType=VARCHAR})
   </insert>
 
 

@@ -1,8 +1,9 @@
 create table alert
 (
-    id   int auto_increment
+    id       int auto_increment
         primary key,
-    time datetime null
+    time     datetime    null,
+    vav_name varchar(60) null
 );
 
 create table updateInfo
@@ -12,16 +13,14 @@ create table updateInfo
     update_time datetime    null
 );
 
-create table vav_alert
-(
-    zone_air_flow                      double      null,
-    zone_cooling_air_flow_set_point    double      null,
-    zone_cooling_temperature_set_point double      null,
-    zone_heating_temperature_set_point double      null,
-    zone_temperature                   double      null,
-    vav_name                           varchar(60) null,
-    time                               datetime    null,
-    maximum_zone_air_flow              double      null,
-    minimum_zone_air_flow              double      null
-);
+# Build this table in code
+# Every Vav will have own table
+# create table vav_alert
+# (
+#     zone_cooling_temperature_set_point double      null,
+#     zone_heating_temperature_set_point double      null,
+#     zone_temperature                   double      null,
+#     vav_name                           varchar(60) null,
+#     time                               datetime    null
+# );
 

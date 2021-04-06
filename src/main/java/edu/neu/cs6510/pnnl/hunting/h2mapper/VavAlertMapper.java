@@ -7,9 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface VavAlertMapper {
-    int insert(VavAlert record);
+    int insert(@Param("vavName") String vavName, @Param("record") VavAlert record);
 
-    int insertSelective(VavAlert record);
-
-    List<VavAlert> getVavAlertInRange(@Param("start") String start, @Param("end") String end);
+    List<VavAlert> getVavAlertInRange(@Param("vavName") String vavName, @Param("start") String start, @Param("end") String end);
 }
