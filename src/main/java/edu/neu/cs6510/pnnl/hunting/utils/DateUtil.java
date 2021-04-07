@@ -7,10 +7,7 @@ import java.text.SimpleDateFormat;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import static edu.neu.cs6510.pnnl.hunting.utils.ConfigConst.*;
 import static java.time.DayOfWeek.*;
@@ -113,5 +110,15 @@ public class DateUtil {
         return workHourStart;
     }
 
+    public static List<Date> convertLocalDateToPSTDate(List<LocalDate> localDates){
+        List<Date> res = new LinkedList<>();
+        for(LocalDate localDate:localDates){
+            res.add(Date.from(localDate.atStartOfDay(ZoneId.of("America/Los_Angeles")).toInstant()));
+        }
+        return res;
+    }
 
+    public static Date[] getCurrentDayStartAndEnd(Date date){
+        return new Date[]{DateUtil.getWorkHourStartTime(date),DateUtil.getWorkHourEndTime(date)};
+    }
 }

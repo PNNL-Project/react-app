@@ -3,6 +3,7 @@ package edu.neu.cs6510.pnnl.hunting.utils;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -38,9 +39,10 @@ class DateUtilTest {
 
     @Test
     void listAllBusinessDayInRange() {
-        LocalDate startDate = LocalDate.of(2012, 3, 7);
-        LocalDate endDate = LocalDate.of(2012, 6, 7);
+        LocalDate startDate = LocalDate.of(2018, 11, 30);
+        LocalDate endDate = LocalDate.of(2020, 5, 6);
         List<LocalDate> dates = DateUtil.listAllBusinessDayInRange(startDate, endDate);
+        System.out.println("Size:" + dates.size());
         for (LocalDate date:dates){
             System.out.println(date);
         }
@@ -56,4 +58,27 @@ class DateUtilTest {
             System.out.println(date);
         }
     }
+
+    @Test
+    void convertLocalDateToPSTDate(){
+        LocalDate startDate = LocalDate.of(2018, 11, 30);
+        LocalDate endDate = LocalDate.of(2020, 5, 6);
+        List<LocalDate> dates = DateUtil.listAllBusinessDayInRange(startDate, endDate);
+        List<Date> dateList = DateUtil.convertLocalDateToPSTDate(dates);
+        for (Date date:dateList){
+            System.out.println(date);
+        }
+    }
+
+    @Test
+    void getCurrentDayStartAndEnd(){
+        LocalDate startDate = LocalDate.of(2018, 11, 30);
+        LocalDate endDate = LocalDate.of(2020, 5, 6);
+        List<LocalDate> dates = DateUtil.listAllBusinessDayInRange(startDate, endDate);
+        List<Date> dateList = DateUtil.convertLocalDateToPSTDate(dates);
+        for(Date date:dateList){
+            System.out.println(Arrays.toString(DateUtil.getCurrentDayStartAndEnd(date)));
+        }
+    }
+
 }
