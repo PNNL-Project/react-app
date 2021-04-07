@@ -1,5 +1,7 @@
 package edu.neu.cs6510.pnnl.hunting.runner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
@@ -17,6 +19,7 @@ import java.io.InputStreamReader;
 @Component
 public class H2DatabaseRunner implements ApplicationRunner, Ordered {
 
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     @Qualifier("h2Template")
@@ -33,6 +36,7 @@ public class H2DatabaseRunner implements ApplicationRunner, Ordered {
         String schemaContent = this.getFileContent(schema);
 //        String dataContent = this.getFileContent(data);
         h2Template.execute(schemaContent);
+        logger.info("Built H2 DB");
 //        h2Template.execute(dataContent);
     }
 

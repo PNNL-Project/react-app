@@ -28,25 +28,7 @@ public class DefaultApplicationRunner implements ApplicationRunner, Ordered {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Date now = new Date(1543618200000L);
-        if(DateUtil.isWorkHour(now)){
-            Date startTime = DateUtil.getWorkHourStartTime(now);
-            Date endTime = DateUtil.getWorkHourEndTime(now);
-            List<String> allVavTable = tableUtilService.getAllVavTable();
-            for(String vavTable:allVavTable){
-                vavToday.put(vavTable,vavService.getVavInRange(startTime, endTime, vavTable));
-            }
-        }else {
 
-        }
-        System.out.println("Done!");
-    }
-
-    private boolean isWorkHour(Date date) {
-        Calendar c = Calendar.getInstance();
-        int week = c.get(Calendar.DAY_OF_WEEK);
-
-        return false;
     }
 
     @Override
