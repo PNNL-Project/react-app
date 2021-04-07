@@ -13,11 +13,14 @@ import edu.neu.cs6510.pnnl.hunting.service.VavService;
 import edu.neu.cs6510.pnnl.hunting.utils.DateUtil;
 import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
 import static edu.neu.cs6510.pnnl.hunting.utils.ConfigConst.*;
 
+import java.time.LocalDate;
 import java.util.*;
 
 @Component
@@ -32,7 +35,8 @@ public class HuntingJob extends QuartzJobBean {
     private TableUtilH2Mapper tableUtilH2Mapper;
     private final Set<String> vavSet = new HashSet<>();
     private static final HashMap<String,Deque<Vav>> vavDequeMap = new HashMap<>();
-    private static final HashMap<String,Boolean> ExistOnSameSideVavMap = new HashMap<>();
+    private static final HashMap<String,Boolean> existOnSameSideVavMap = new HashMap<>();
+    private final Logger logger = LoggerFactory.getLogger(getClass());
 
 
 
@@ -43,15 +47,26 @@ public class HuntingJob extends QuartzJobBean {
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         getAllVav();
-        System.out.println("Get All Vav");
-        checkTemperature();
-        System.out.println("Finish Check "+new Date());
+        logger.info("Get All Vav");
+//        2018-11-30 17:09:00
+//        2020-05-06 16:59:00
+        LocalDate startDate = LocalDate.of(2018, 11, 30);
+        LocalDate endDate = LocalDate.of(2018, 12, 25);
+        List<LocalDate> dates = DateUtil.listAllBusinessDayInRange(startDate, endDate);
+        List<Date> dateList = DateUtil.convertLocalDateToPSTDate(dates);
+        for(Date date:dateList){
+            logger.info("Check Date:" + DateUtil.convertDateToString(date));
+            checkTemperature(DateUtil.getWorkHourEndTime(date));
+        }
+
+        logger.info("Finish Check "+new Date() );
     }
 
 
-    private void checkTemperature(){
 
-        Date now = new Date(System.currentTimeMillis() - TIME_SHIFT);
+    private void checkTemperature(Date now){
+
+//        now = new Date(System.currentTimeMillis() - TIME_SHIFT);
         System.out.println(DateUtil.convertDateToString(now));
         for(String vavName:vavSet){
             Date startTime = null;
@@ -79,8 +94,11 @@ public class HuntingJob extends QuartzJobBean {
 
     private void doHunting(String vavName, Date startTime, Date endTime) {
         List<Vav> vavInRange = vavService.getVavInRange(startTime, endTime, vavName);
+        if(vavInRange == null){
+            return;
+        }
         Deque<Vav> deque = vavDequeMap.getOrDefault(vavName, new LinkedList<>());
-        Boolean isExistOnSameSide = ExistOnSameSideVavMap.getOrDefault(vavName, false);
+        Boolean isExistOnSameSide = existOnSameSideVavMap.getOrDefault(vavName, false);
         for(Vav vav: vavInRange){
             int tag = valueRange(vav);
             if(tag != 0) {
@@ -91,18 +109,15 @@ public class HuntingJob extends QuartzJobBean {
                     if(!deque.isEmpty() && largeThanOneHour(deque.getLast(), vav) && isExistOnSameSide){
                         // if the anomaly temperature keep on one side
                         // Poll the data large than one hour
-                        System.out.println("First:"+deque.getLast().getCommon().getTime());
                         deque.pollLast();
                     }
                     while (!deque.isEmpty() && largeThanOneHour(deque.getFirst(), vav)) {
-                        System.out.println("Third:"+deque.getFirst().getCommon().getTime());
                         vavAlertMapper.insert(vavName,new VavAlert(Objects.requireNonNull(deque.pollFirst())));
                     }
                 }
                 if(!deque.isEmpty()){
                     if(valueRange(deque.getLast()) == valueRange(vav)){
                         if(isExistOnSameSide){
-                            System.out.println("Second:"+deque.getLast().getCommon().getTime());
                             deque.pollLast();
                         }
                         isExistOnSameSide = true;
@@ -150,7 +165,6 @@ public class HuntingJob extends QuartzJobBean {
             }else if(temp<heatingTemperatureSetPoint){
                 return  -1;
             }
-
         }
         return 0;
     }
