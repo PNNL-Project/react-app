@@ -19,7 +19,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/huntingService"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/hunting_presentation"/>
                 <property name="username" value="root"/>
                 <!-- Use plain text save password FIXME-->
                 <property name="password" value="qwer1234"/>

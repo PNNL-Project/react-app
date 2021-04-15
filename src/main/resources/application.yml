@@ -6,10 +6,10 @@ mybatis:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-#    jdbc-url: jdbc:mysql://localhost:3306/huntingService
+#    jdbc-url: jdbc:mysql://localhost:3306/hunting_presentation
 #    username: root
 #    password: qwer1234
-    jdbc-url: jdbc:mysql://myrds6510.cup5iuwqdfry.us-east-1.rds.amazonaws.com:3306/hunting-service
+    jdbc-url: jdbc:mysql://myrds6510.cup5iuwqdfry.us-east-1.rds.amazonaws.com:3306/hunting_presentation
     username: admin
     password: 11111111
     h2:
@@ -34,3 +34,13 @@ invoke:
     location: db/schema-h2.sql
   data:
     location:
+
+
+logging:
+  level:
+    edu:
+      neu:
+        cs6510:
+          pnnl:
+            hunting:
+              h2mapper: DEBUG

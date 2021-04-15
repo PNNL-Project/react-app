@@ -361,9 +361,9 @@ public class Parser {
                 case TIME:
                     // 11/30/18 17:09
                     // Note: sample csv and full csv have different format of date
-//                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yy HH:mm");
 //                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+//                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm");
                     try {
                         Date date = dateFormat.parse(value);
                         DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

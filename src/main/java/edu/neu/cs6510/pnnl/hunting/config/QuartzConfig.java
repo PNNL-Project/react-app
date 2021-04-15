@@ -21,8 +21,8 @@ public class QuartzConfig {
 
 //    private static final String CRON_EXPRESSION = "0/30 * * ? * * *";
 //    private static final String CRON_EXPRESSION = " 0/45 * 6-20 ? * MON,TUE,WED,THU,FRI *";
-    // Every 10 minutes
-    private static final String CRON_EXPRESSION = " 0 */10 * ? * *";
+    // Every 15 minutes
+    private static final String CRON_EXPRESSION = " 0 */15 * ? * *";
 //    private static final String CRON_EXPRESSION = "0 42 11 ? * * *";
     @Autowired
     VavService vavService;
