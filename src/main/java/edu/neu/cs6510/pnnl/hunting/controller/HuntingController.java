@@ -51,10 +51,10 @@ public class HuntingController {
             Date alertTime = alert.getTime();
             List<VavAlert> vavAlerts = vavAlertMapper.getVavAlertInRange(
                     alert.getVavName(),
-                    getQueryDateString(DateUtil.getOneHourBeforeTime(alertTime)),
+                    getQueryDateString(DateUtil.getTimeWindowStartTime(alertTime)),
                     getQueryDateString(alertTime)
             );
-            response.put(DateUtil.convertDateToString(alert.getTime()) + " - " + alert.getVavName(),new ArrayList<>(vavAlerts));
+            response.put(DateUtil.convertDateToString(alertTime) + " - " + alert.getVavName(),new ArrayList<>(vavAlerts));
         }
         return R.ok(response);
     }

@@ -1,12 +1,9 @@
 package edu.neu.cs6510.pnnl.hunting.utils;
 
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.time.*;
 import java.util.*;
 import java.util.stream.Collectors;
 import static edu.neu.cs6510.pnnl.hunting.utils.ConfigConst.*;
@@ -18,6 +15,11 @@ public class DateUtil {
             MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY
     );
 
+    final static SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    static {
+//        DATE_FORMAT.setTimeZone(TimeZone.getTimeZone("America/Los_Angeles"));
+    }
+
     /**
      * Add any holiday here
      */
@@ -25,13 +27,14 @@ public class DateUtil {
 
     );
 
-    private DateUtil(){}
+    private DateUtil(){
+
+    }
 
    public static Date convertStringToDate(String dateString){
        Date date = null;
-       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
        try {
-           date = dateFormat.parse(dateString);
+           date = DATE_FORMAT.parse(dateString);
 
        }catch (ParseException e){
            e.printStackTrace();
@@ -42,14 +45,12 @@ public class DateUtil {
 
    public static String getCurrentTimeString(){
        Date date = new Date();
-       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-       return dateFormat.format(date);
+       return DATE_FORMAT.format(date);
    }
 
 
    public static String convertDateToString(Date date){
-       SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-       return dateFormat.format(date);
+       return DATE_FORMAT.format(date);
    }
 
     public static List<LocalDate> listAllBusinessDayInRange(LocalDate startDate, LocalDate endDate){
@@ -76,8 +77,8 @@ public class DateUtil {
         return week >= 2 && week<=6 && hour>=6 && hour<18;
     }
 
-    public static Date getOneHourBeforeTime(Date date){
-        return new Date(date.getTime() - ONE_HOUR);
+    public static Date getTimeWindowStartTime(Date date){
+        return new Date(date.getTime() - HUNTING_TIME_WINDOW);
     }
     public static Date getWorkHourStartTime(Date date){
         return getWorkTime(date,WORK_HOUR_START_TIME);
@@ -87,38 +88,32 @@ public class DateUtil {
         return getWorkTime(date,WORK_HOUR_END_TIME);
     }
 
-    public static Date getAnyWorkHourTime(Date date, int hour){
-        if(hour>=6 && hour<=18){
-            return getWorkTime(date, hour +":00:00");
-        }else {
-            // FIXME add an exception or logging
-            return null;
-        }
-    }
 
-    private static Date getWorkTime(Date date, String hourString) {
-        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
-        simpleDateFormat.applyPattern("yyyy-MM-dd");
-        String timeStr = simpleDateFormat.format(date) + " " + hourString;
-        Date workHourStart = null;
-        try {
-            workHourStart = dateFormat.parse(timeStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return workHourStart;
+    private static Date getWorkTime(Date date, int setHour) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY,setHour);
+        return cal.getTime();
     }
 
     public static List<Date> convertLocalDateToPSTDate(List<LocalDate> localDates){
         List<Date> res = new LinkedList<>();
+        ZoneId z = ZoneId.of("America/Los_Angeles");
         for(LocalDate localDate:localDates){
-            res.add(Date.from(localDate.atStartOfDay(ZoneId.of("America/Los_Angeles")).toInstant()));
+            ZonedDateTime zdt = localDate.atStartOfDay(z);
+            Instant instant = zdt.toInstant();
+            res.add(Date.from(instant));
         }
         return res;
     }
 
     public static Date[] getCurrentDayStartAndEnd(Date date){
         return new Date[]{DateUtil.getWorkHourStartTime(date),DateUtil.getWorkHourEndTime(date)};
+    }
+
+    public static String convertDateToPSTString(Date date){
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        return DATE_FORMAT.format(calendar.getTime());
     }
 }
