@@ -50,8 +50,8 @@ public class HuntingJob extends QuartzJobBean {
         logger.info("Get All Vav");
 //        2018-11-30 17:09:00
 //        2020-05-06 16:59:00
-        LocalDate startDate = LocalDate.of(2018, 11, 30);
-        LocalDate endDate = LocalDate.of(2018, 12, 25);
+        LocalDate startDate = LocalDate.of(2019, 11, 29);
+        LocalDate endDate = LocalDate.of(2019, 12, 3);
         List<LocalDate> dates = DateUtil.listAllBusinessDayInRange(startDate, endDate);
         List<Date> dateList = DateUtil.convertLocalDateToPSTDate(dates);
         for(Date date:dateList){
@@ -97,21 +97,21 @@ public class HuntingJob extends QuartzJobBean {
         if(vavInRange == null){
             return;
         }
-        Deque<Vav> deque = vavDequeMap.getOrDefault(vavName, new LinkedList<>());
+        Deque<Vav> deque = vavDequeMap.computeIfAbsent(vavName, d -> new LinkedList<>());
         Boolean isExistOnSameSide = existOnSameSideVavMap.getOrDefault(vavName, false);
         for(Vav vav: vavInRange){
             int tag = valueRange(vav);
             if(tag != 0) {
-                if(!deque.isEmpty() && largeThanOneHour(deque.getFirst(),vav)){
+                if(!deque.isEmpty() && largeThanTimeWindow(deque.getFirst(),vav)){
                     if(deque.size() >= WARNING){
                         sendAlert(vavName,deque.getLast().getCommon().getTime());
                     }
-                    if(!deque.isEmpty() && largeThanOneHour(deque.getLast(), vav) && isExistOnSameSide){
+                    if(!deque.isEmpty() && largeThanTimeWindow(deque.getLast(), vav) && isExistOnSameSide){
                         // if the anomaly temperature keep on one side
                         // Poll the data large than one hour
                         deque.pollLast();
                     }
-                    while (!deque.isEmpty() && largeThanOneHour(deque.getFirst(), vav)) {
+                    while (!deque.isEmpty() && largeThanTimeWindow(deque.getFirst(), vav)) {
                         vavAlertMapper.insert(vavName,new VavAlert(Objects.requireNonNull(deque.pollFirst())));
                     }
                 }
@@ -169,8 +169,8 @@ public class HuntingJob extends QuartzJobBean {
         return 0;
     }
 
-    private boolean largeThanOneHour(Vav first, Vav last) {
-        return Math.abs(first.getCommon().getTime().getTime() - last.getCommon().getTime().getTime()) > ONE_HOUR;
+    private boolean largeThanTimeWindow(Vav first, Vav last) {
+        return Math.abs(first.getCommon().getTime().getTime() - last.getCommon().getTime().getTime()) > HUNTING_TIME_WINDOW;
     }
 
     private void getAllVav(){
