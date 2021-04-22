@@ -1,0 +1,1293 @@
+{
+  "msg": "success",
+  "2019-11-30 18:28:00 - vav108": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:30:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:33:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:35:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:40:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:43:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:44:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:48:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:53:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:58:00"
+    }
+  ],
+  "2019-11-29 17:51:00 - VAV119": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:18:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:21:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:23:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:26:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:29:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:33:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:37:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:41:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:44:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:46:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:49:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav119",
+      "time": "2019-11-29 17:51:00"
+    }
+  ],
+  "code": 0,
+  "2019-11-29 18:00:00 - VAV127A": [
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 72.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:09:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.80000305,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:11:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:12:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:13:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.80000305,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:15:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:16:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.80000305,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:17:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:20:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:21:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.80000305,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:22:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:26:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:27:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 72.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:29:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:30:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:31:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:33:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:34:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.70000458,
+      "vavName": "vav127a",
+      "time": "2019-11-29 17:35:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.5,
+      "vavName": "vav127a",
+      "time": "2019-11-29 18:00:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 71.0,
+      "zoneHeatingTemperatureSetPoint": 67.0,
+      "zoneTemperature": 71.5,
+      "vavName": "vav127a",
+      "time": "2019-11-29 18:00:00"
+    }
+  ],
+  "2019-11-30 15:58:00 - vav108": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav108",
+      "time": "2019-11-30 13:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 13:59:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:01:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:04:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:06:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:07:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:11:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:14:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:15:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:19:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:22:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:24:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:27:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:29:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 69.90000153,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:15:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:25:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:30:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:33:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:35:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:40:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:43:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:44:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:48:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:53:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:58:00"
+    }
+  ],
+  "2019-11-30 14:40:00 - vav105": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 69.90000153,
+      "vavName": "vav105",
+      "time": "2019-11-30 11:54:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 69.90000153,
+      "vavName": "vav105",
+      "time": "2019-11-30 12:08:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:46:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:49:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:54:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:57:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:01:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:04:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:05:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:09:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:12:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:14:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:17:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:19:00"
+    }
+  ],
+  "2019-11-29 17:46:00 - VAV123A": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:13:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:16:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:18:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:21:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:23:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:24:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:31:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:32:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:39:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:41:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:44:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav123a",
+      "time": "2019-11-29 17:46:00"
+    }
+  ],
+  "2019-11-30 16:46:00 - vav105": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:46:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:49:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:54:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:57:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:01:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:04:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:05:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:09:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:12:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:14:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:17:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:19:00"
+    }
+  ],
+  "2019-11-30 18:33:00 - vav108": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:33:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:35:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:40:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:43:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:44:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:48:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:53:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 15:58:00"
+    }
+  ],
+  "2019-11-30 14:29:00 - vav108": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 69.90000153,
+      "vavName": "vav108",
+      "time": "2019-11-30 11:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.555,
+      "vavName": "vav108",
+      "time": "2019-11-30 13:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 13:59:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:01:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:04:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:06:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:07:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:11:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:14:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:15:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:19:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:22:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:24:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:27:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav108",
+      "time": "2019-11-30 14:29:00"
+    }
+  ],
+  "2019-11-29 17:48:00 - VAV100": [
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 72.7,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:09:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:10:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 65.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:13:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 74.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:15:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 74.1,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:16:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 67.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:19:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 65.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:21:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 72.7,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:23:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:24:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 65.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:27:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:28:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:30:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 67.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:32:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 65.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:34:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:36:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:38:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:40:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 73.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:42:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 74.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:43:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 67.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:47:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 72.0,
+      "zoneHeatingTemperatureSetPoint": 68.0,
+      "zoneTemperature": 66.0,
+      "vavName": "vav100",
+      "time": "2019-11-29 17:48:00"
+    }
+  ],
+  "2019-11-30 16:49:00 - vav105": [
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:49:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:51:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:54:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:56:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 13:57:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:01:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 76.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:04:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:05:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:09:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:12:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:14:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 75.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:17:00"
+    },
+    {
+      "zoneCoolingTemperatureSetPoint": 74.0,
+      "zoneHeatingTemperatureSetPoint": 70.0,
+      "zoneTemperature": 68.0,
+      "vavName": "vav105",
+      "time": "2019-11-30 14:19:00"
+    }
+  ]
+}

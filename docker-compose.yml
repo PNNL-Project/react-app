@@ -1,0 +1,25 @@
+version: '3'
+services:
+  predict:
+    build: ./pnnl-predict-backend/server
+    ports:
+      - '5000:5000'
+    depends_on:
+      - myredis
+  cron:
+    build: ./pnnl-predict-backend/cron
+    depends_on:
+      - myredis
+  myredis:
+    image: redis:6.0.5-alpine
+  alert:
+    build: ./alert-service
+    ports:
+      - '8091:8080'
+  frontend:
+    build: ./pnnl-frontend-react
+    ports:
+      - '3000:3000'
+    depends_on:
+      - predict
+      - alert
