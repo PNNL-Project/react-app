@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.CommonMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Common">
+    <!--@mbg.generated-->
+    <!--@Table common-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="external_temperature" jdbcType="DOUBLE" property="externalTemperature" />
+    <result column="is_summer" jdbcType="BOOLEAN" property="isSummer" />
+    <result column="is_weekday" jdbcType="BOOLEAN" property="isWeekday" />
+    <result column="is_working_hours" jdbcType="BOOLEAN" property="isWorkingHours" />
+    <result column="cooling_consumption" jdbcType="DOUBLE" property="coolingConsumption" />
+    <result column="heating_consumption" jdbcType="DOUBLE" property="heatingConsumption" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, external_temperature, is_summer, is_weekday, is_working_hours, cooling_consumption, 
+    heating_consumption, `time`
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from common
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from common
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Common" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into common (external_temperature, is_summer, is_weekday, 
+      is_working_hours, cooling_consumption, heating_consumption, 
+      `time`)
+    values (#{externalTemperature,jdbcType=DOUBLE}, #{isSummer,jdbcType=BOOLEAN}, #{isWeekday,jdbcType=BOOLEAN}, 
+      #{isWorkingHours,jdbcType=BOOLEAN}, #{coolingConsumption,jdbcType=DOUBLE}, #{heatingConsumption,jdbcType=DOUBLE}, 
+      #{time,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Common" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into common
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="externalTemperature != null">
+        external_temperature,
+      </if>
+      <if test="isSummer != null">
+        is_summer,
+      </if>
+      <if test="isWeekday != null">
+        is_weekday,
+      </if>
+      <if test="isWorkingHours != null">
+        is_working_hours,
+      </if>
+      <if test="coolingConsumption != null">
+        cooling_consumption,
+      </if>
+      <if test="heatingConsumption != null">
+        heating_consumption,
+      </if>
+      <if test="time != null">
+        `time`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="externalTemperature != null">
+        #{externalTemperature,jdbcType=DOUBLE},
+      </if>
+      <if test="isSummer != null">
+        #{isSummer,jdbcType=BOOLEAN},
+      </if>
+      <if test="isWeekday != null">
+        #{isWeekday,jdbcType=BOOLEAN},
+      </if>
+      <if test="isWorkingHours != null">
+        #{isWorkingHours,jdbcType=BOOLEAN},
+      </if>
+      <if test="coolingConsumption != null">
+        #{coolingConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="heatingConsumption != null">
+        #{heatingConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Common">
+    <!--@mbg.generated-->
+    update common
+    <set>
+      <if test="externalTemperature != null">
+        external_temperature = #{externalTemperature,jdbcType=DOUBLE},
+      </if>
+      <if test="isSummer != null">
+        is_summer = #{isSummer,jdbcType=BOOLEAN},
+      </if>
+      <if test="isWeekday != null">
+        is_weekday = #{isWeekday,jdbcType=BOOLEAN},
+      </if>
+      <if test="isWorkingHours != null">
+        is_working_hours = #{isWorkingHours,jdbcType=BOOLEAN},
+      </if>
+      <if test="coolingConsumption != null">
+        cooling_consumption = #{coolingConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="heatingConsumption != null">
+        heating_consumption = #{heatingConsumption,jdbcType=DOUBLE},
+      </if>
+      <if test="time != null">
+        `time` = #{time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Common">
+    <!--@mbg.generated-->
+    update common
+    set external_temperature = #{externalTemperature,jdbcType=DOUBLE},
+      is_summer = #{isSummer,jdbcType=BOOLEAN},
+      is_weekday = #{isWeekday,jdbcType=BOOLEAN},
+      is_working_hours = #{isWorkingHours,jdbcType=BOOLEAN},
+      cooling_consumption = #{coolingConsumption,jdbcType=DOUBLE},
+      heating_consumption = #{heatingConsumption,jdbcType=DOUBLE},
+      `time` = #{time,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByTime" parameterType="java.sql.Timestamp" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from common
+    <where>
+      <if test="startTime!=null">
+        <![CDATA[and DATE_FORMAT(#{endTime}, '%Y-%m-%d %H:%T:%s') >=
+                        DATE_FORMAT(#{startTime}, '%Y-%m-%d %H:%T:%s')   ]]>
+      </if>
+      <if test="endTime!=null">
+        <![CDATA[and DATE_FORMAT(time, '%Y-%m-%d %H:%T:%s') <=
+                        DATE_FORMAT(#{endTime} , '%Y-%m-%d %H:%T:%s')    ]]>
+      </if>
+    </where>
+
+  </select>
+
+  <select id="getVavTableName" resultType="java.lang.String" statementType="STATEMENT">
+    select COLUMN_NAME
+    from information_schema.COLUMNS
+    where TABLE_NAME=${vavTable}
+    and COLUMN_NAME like '%ahu%'
+    </select>
+</mapper>

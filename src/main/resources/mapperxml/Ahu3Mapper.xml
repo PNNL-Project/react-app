@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.Ahu3Mapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Ahu3">
+    <!--@mbg.generated-->
+    <!--@Table ahu3-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="discharge_air_flow" jdbcType="DOUBLE" property="dischargeAirFlow" />
+    <result column="exhaust_air_flow" jdbcType="DOUBLE" property="exhaustAirFlow" />
+    <result column="minimum_outdoor_air_flow" jdbcType="DOUBLE" property="minimumOutdoorAirFlow" />
+    <result column="outdoor_air_flow" jdbcType="DOUBLE" property="outdoorAirFlow" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, discharge_air_flow, exhaust_air_flow, minimum_outdoor_air_flow, outdoor_air_flow
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ahu3
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ahu3
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu3 (discharge_air_flow, exhaust_air_flow, minimum_outdoor_air_flow, 
+      outdoor_air_flow)
+    values (#{dischargeAirFlow,jdbcType=DOUBLE}, #{exhaustAirFlow,jdbcType=DOUBLE}, #{minimumOutdoorAirFlow,jdbcType=DOUBLE}, 
+      #{outdoorAirFlow,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu3
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="dischargeAirFlow != null">
+        discharge_air_flow,
+      </if>
+      <if test="exhaustAirFlow != null">
+        exhaust_air_flow,
+      </if>
+      <if test="minimumOutdoorAirFlow != null">
+        minimum_outdoor_air_flow,
+      </if>
+      <if test="outdoorAirFlow != null">
+        outdoor_air_flow,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="dischargeAirFlow != null">
+        #{dischargeAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustAirFlow != null">
+        #{exhaustAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="minimumOutdoorAirFlow != null">
+        #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="outdoorAirFlow != null">
+        #{outdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3">
+    <!--@mbg.generated-->
+    update ahu3
+    <set>
+      <if test="dischargeAirFlow != null">
+        discharge_air_flow = #{dischargeAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="exhaustAirFlow != null">
+        exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="minimumOutdoorAirFlow != null">
+        minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+      <if test="outdoorAirFlow != null">
+        outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu3">
+    <!--@mbg.generated-->
+    update ahu3
+    set discharge_air_flow = #{dischargeAirFlow,jdbcType=DOUBLE},
+      exhaust_air_flow = #{exhaustAirFlow,jdbcType=DOUBLE},
+      minimum_outdoor_air_flow = #{minimumOutdoorAirFlow,jdbcType=DOUBLE},
+      outdoor_air_flow = #{outdoorAirFlow,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.mapper.Ahu1ThresholdsMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds">
+    <!--@mbg.generated-->
+    <!--@Table ahu1_thresholds-->
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="minimum_outdoor_air_flow_set_point" jdbcType="DOUBLE" property="minimumOutdoorAirFlowSetPoint" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    ID, minimum_outdoor_air_flow_set_point
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from ahu1_thresholds
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from ahu1_thresholds
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu1_thresholds (minimum_outdoor_air_flow_set_point)
+    values (#{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE})
+  </insert>
+  <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into ahu1_thresholds
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="minimumOutdoorAirFlowSetPoint != null">
+        minimum_outdoor_air_flow_set_point,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="minimumOutdoorAirFlowSetPoint != null">
+        #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds">
+    <!--@mbg.generated-->
+    update ahu1_thresholds
+    <set>
+      <if test="minimumOutdoorAirFlowSetPoint != null">
+        minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="edu.neu.cs6510.pnnl.hunting.model.Ahu1Thresholds">
+    <!--@mbg.generated-->
+    update ahu1_thresholds
+    set minimum_outdoor_air_flow_set_point = #{minimumOutdoorAirFlowSetPoint,jdbcType=DOUBLE}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

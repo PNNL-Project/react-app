@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <settings>
+        <setting name="logImpl" value="NO_LOGGING"/>
+    </settings>
+    <environments default="development">
+        <environment id="development">
+<!--            <transactionManager type="JDBC"/>-->
+<!--            <dataSource type="POOLED">-->
+<!--                <property name="driver" value="com.mysql.jdbc.Driver"/>-->
+<!--                <property name="url" value="jdbc:mysql://database-1.cfuwf2p8gqbo.us-east-1.rds.amazonaws.com:3306/cs6510Cheng"/>-->
+<!--                <property name="username" value="admin"/>-->
+<!--                &lt;!&ndash; Use plain text save password FIXME&ndash;&gt;-->
+<!--                <property name="password" value="11111111"/>-->
+<!--            </dataSource>-->
+
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/hunting_presentation"/>
+                <property name="username" value="root"/>
+                <!-- Use plain text save password FIXME-->
+                <property name="password" value="qwer1234"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mapperxml/CommonMapper.xml"/>
+        <mapper resource="mapperxml/Ahu1Mapper.xml"/>
+        <mapper resource="mapperxml/Ahu2Mapper.xml"/>
+        <mapper resource="mapperxml/Ahu3Mapper.xml"/>
+        <mapper resource="mapperxml/Ahu4Mapper.xml"/>
+        <mapper resource="mapperxml/Ahu1ThresholdsMapper.xml"/>
+        <mapper resource="mapperxml/Ahu3ThresholdsMapper.xml"/>
+        <mapper resource="mapperxml/VavMapper.xml"/>
+        <mapper resource="mapperxml/VavThresholdsMapper.xml"/>
+        <mapper resource="mapperxml/SebMapper.xml"/>
+        <mapper resource="mapperxml/TableUtilMapper.xml"/>
+    </mappers>
+
+</configuration>
