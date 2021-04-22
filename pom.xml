@@ -10,7 +10,7 @@
     </parent>
     <groupId>edu.neu.cs6510.pnnl</groupId>
     <artifactId>alert-service</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-</version>
     <name>alert-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
@@ -110,6 +110,9 @@
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
             </resource>
         </resources>
     </build>

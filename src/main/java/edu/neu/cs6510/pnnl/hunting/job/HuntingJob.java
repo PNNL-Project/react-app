@@ -38,12 +38,6 @@ public class HuntingJob extends QuartzJobBean {
     private static final HashMap<String,Boolean> existOnSameSideVavMap = new HashMap<>();
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-
-
-
-
-
-
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         getAllVav();
@@ -93,18 +87,22 @@ public class HuntingJob extends QuartzJobBean {
     }
 
     private void doHunting(String vavName, Date startTime, Date endTime) {
+        logger.info("Start hunting with: " + vavName + " from: "
+                + DateUtil.convertDateToString(startTime)
+                + " to: "
+                + DateUtil.convertDateToString(endTime));
         List<Vav> vavInRange = vavService.getVavInRange(startTime, endTime, vavName);
         if(vavInRange == null){
             return;
         }
         Deque<Vav> deque = vavDequeMap.computeIfAbsent(vavName, d -> new LinkedList<>());
-        Boolean isExistOnSameSide = existOnSameSideVavMap.getOrDefault(vavName, false);
+        boolean isExistOnSameSide = existOnSameSideVavMap.computeIfAbsent(vavName, d->Boolean.FALSE);
         for(Vav vav: vavInRange){
             int tag = valueRange(vav);
             if(tag != 0) {
                 if(!deque.isEmpty() && largeThanTimeWindow(deque.getFirst(),vav)){
                     if(deque.size() >= WARNING){
-                        sendAlert(vavName,deque.getLast().getCommon().getTime());
+                        sendAlert(vavName.toLowerCase(),deque.getLast().getCommon().getTime());
                     }
                     if(!deque.isEmpty() && largeThanTimeWindow(deque.getLast(), vav) && isExistOnSameSide){
                         // if the anomaly temperature keep on one side
@@ -133,12 +131,16 @@ public class HuntingJob extends QuartzJobBean {
         // Run out of all vav, still have some anomaly vav in the deque.
         if(DateUtil.getWorkHourEndTime(endTime).getTime() <= endTime.getTime() && deque.size() >= WARNING){
             Vav last = deque.getLast();
-            sendAlert(last.getVavName(),last.getCommon().getTime());
+            sendAlert(last.getVavName().toLowerCase(),last.getCommon().getTime());
             // Insert all remain anomaly vav
             while(!deque.isEmpty()){
                 vavAlertMapper.insert(vavName,new VavAlert(Objects.requireNonNull(deque.pollFirst())));
             }
         }
+        logger.info("end hunting with: " + vavName + " from: "
+                + DateUtil.convertDateToString(startTime)
+                + " to: "
+                + DateUtil.convertDateToString(endTime));
     }
 
     private void sendAlert(String vavName, Date time) {
