@@ -1,0 +1,117 @@
+.App {
+  text-align: center;
+  background-color: rgb(18, 55, 134);
+  font-family: serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.margins {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.border {
+  border: 2px solid rgb(193, 210, 247);
+}
+
+.title{
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: serif;
+}
+
+.heading{
+  font-size: calc(10px + 2vmin);
+  color: rgb(10, 10, 131);
+  font-size: x-large;
+  text-align: center;
+  font-family: serif;
+  font-size: 24px;
+  border: 2px solid rgb(209, 221, 247);
+  background-color: rgb(218, 229, 252);
+}
+
+.App-header {
+  /* min-height: 100vh; */
+  display: flex;
+  /* flex-direction: column;
+  align-items: left;
+  justify-content: left; */
+  margin-left: 1%;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  font-style: italic;
+  text-transform: uppercase;
+  font-family: serif;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body,html {
+  margin: 0;
+  font-family: serif;
+}
+
+ul {
+  padding: 0;
+  width: 50%;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: 12.5%;
+  margin-right: 0.625%;
+  text-align: center;
+  line-height: 3;
+  text-transform: uppercase;
+  color: rgb(25, 4, 145);
+}
+
+li:last-child a {
+  margin-right: 0;
+}
+
+a:link, a:visited, a:focus {
+  background: rgb(200, 210, 243); 
+}
+
+a:hover {
+  background:rgba(240, 238, 145, 0.575); 
+}
+
+a:active {
+  background: rgb(4, 42, 170);
+  color: white;
+}
