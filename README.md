@@ -15,6 +15,10 @@ The react-app repo contains three contains three components:
 2. **pnnl-predict-backend**: Used to query MySQL to provide the web app data to create visualizations (piecharts, heatmaps & stacked bar).
 3. **pnnl-frontend-react**: Used to display Alerts, Predictions, and provides a link to the Grafana Dashboards.
 
+## Quick launch?
+
+EZ! Make sure the docker app is up and running on your machine. Then `cd ./react-app` and `docker-compose up -d` (running a set of containers at background)
+
 ---
 
 # pnnl-frontend-react
@@ -97,10 +101,6 @@ Sample requests (data available from the passed one month to present day):
 GET `http://localhost:5000/range/temperature/2021-03-16/2021-03-17`
 
 GET `http://localhost:5000/day/temperature/2021-03-16`
-
-## How can I use it?
-
-EZ! Make sure the docker app is up and running on your machine. Then `cd ./react-app-redis-backend` and `docker-compose up -d` (running a set of containers at background)
 
 ---
 
