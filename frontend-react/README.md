@@ -27,7 +27,7 @@ The heat map shows the data from the last 4 weeks(start from Sunday). The airflo
 Alerts(Hunting Service)
 ### Alerts
 ![](images/react-fe-alerts.png)
-The page presents the device, timestamp of the hunting alerts. Users can use### the button at the top left to filter.
+The page presents the device, timestamp of the hunting alerts. Users can use the button at the top left to filter.
 Datasource
 All of the data is from a URL.
 ### Details
