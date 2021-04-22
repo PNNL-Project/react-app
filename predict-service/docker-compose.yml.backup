@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nodejs:
+    build: ./server
+    ports:
+      - '5000:5000'
+    depends_on:
+      - myredis
+  cron:
+    build: ./cron
+    depends_on:
+      - myredis
+  myredis:
+    image: redis:6.0.5-alpine
