@@ -10,7 +10,7 @@
     </parent>
     <groupId>edu.neu.cs6510.pnnl</groupId>
     <artifactId>alert-service</artifactId>
-    <version>0.0.2-</version>
+    <version>0.0.2</version>
     <name>alert-service</name>
     <description>Demo project for Spring Boot</description>
     <properties>
