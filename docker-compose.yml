@@ -1,13 +1,13 @@
 version: '3'
 services:
   predict:
-    build: ./pnnl-predict-backend/server
+    build: ./predict-service/server
     ports:
       - '5000:5000'
     depends_on:
       - myredis
   cron:
-    build: ./pnnl-predict-backend/cron
+    build: ./predict-service/cron
     depends_on:
       - myredis
   myredis:

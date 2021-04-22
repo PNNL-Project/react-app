@@ -4,15 +4,15 @@ This repo contains three components of our react app:
 
 - alert-service
 - pnnl-frontend-react
-- pnnl-predictions-service
+- predict-service
 
-Both _alert-service_ and _pnnl-predict-backend_ serve as the backend of _pnnl-frontend-react_.
+Both _alert-service_ and _predict-service_ serve as the backend of _pnnl-frontend-react_.
 
 The react-app repo contains three contains three components:
 ![](images/react-components-diagram.png)
 
 1. **alert-service**: Used to identify hunting trends that occurs in the ZoneTemperature data across various VAV devices.
-2. **pnnl-predict-backend**: Used to query MySQL to provide the web app data to create visualizations (piecharts, heatmaps & stacked bar).
+2. **predict-service**: Used to query MySQL to provide the web app data to create visualizations (piecharts, heatmaps & stacked bar).
 3. **pnnl-frontend-react**: Used to display Alerts, Predictions, and provides a link to the Grafana Dashboards.
 
 ## Quick launch?
@@ -84,7 +84,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 ---
 
-# pnnl-predict-backend
+# predict-service
 
 Docker Images:
 
@@ -108,7 +108,7 @@ GET `http://localhost:5000/day/temperature/2021-03-16`
 
 You may need to configure db credentials in the following places
 
-1. pnnl-predict-backend: `./pnnl-predict-backend/cron/credentials.yaml`
+1. predict-service: `./predict-service/cron/credentials.yaml`
 2. pnnl-frontend-react: `./pnnl-frontend-react/src/config.js`
 3. alert-service: `./alert-service/Dockerfile`
 
