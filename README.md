@@ -1,10 +1,10 @@
 # react-app
 
-This repo contains three components of our reac app:
+This repo contains three components of our react app:
 
 - alert-service
 - pnnl-frontend-react
-- pnnl-predict-backend
+- pnnl-predictions-service
 
 Both _alert-service_ and _pnnl-predict-backend_ serve as the backend of _pnnl-frontend-react_.
 
