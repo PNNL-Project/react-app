@@ -8,6 +8,13 @@ This repo contains three components of our reac app:
 
 Both _alert-service_ and _pnnl-predict-backend_ serve as the backend of _pnnl-frontend-react_.
 
+The react-app repo contains three contains three components:
+![](images/react-components-diagram.png)
+
+1. **alert-service**: Used to identify hunting trends that occurs in the ZoneTemperature data across various VAV devices.
+2. **pnnl-predict-backend**: Used to query MySQL to provide the web app data to create visualizations (piecharts, heatmaps & stacked bar).
+3. **pnnl-frontend-react**: Used to display Alerts, Predictions, and provides a link to the Grafana Dashboards.
+
 ---
 
 # pnnl-frontend-react
@@ -95,12 +102,18 @@ GET `http://localhost:5000/day/temperature/2021-03-16`
 
 EZ! Make sure the docker app is up and running on your machine. Then `cd ./react-app-redis-backend` and `docker-compose up -d` (running a set of containers at background)
 
-# IMPORTANT: MySQL data source specification
+---
+
+# IMPORTANT: MySQL data source specification location
+
+You may need to configure db credentials in the following places
 
 1. pnnl-predict-backend: `./pnnl-predict-backend/cron/credentials.yaml`
 2. pnnl-frontend-react: `./pnnl-frontend-react/src/config.js`
 3. alert-service: `./alert-service/Dockerfile`
 
-# IMPORTANT: Grafana Link
+# IMPORTANT: Grafana Link specification
+
+You may need to configure grafana url inside the following file
 
 grafana-link: `./pnnl-frontend-react/src/App.js`

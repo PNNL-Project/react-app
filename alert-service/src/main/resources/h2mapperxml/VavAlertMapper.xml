@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.h2mapper.VavAlertMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.VavAlert">
+    <!--@mbg.generated-->
+    <!--@Table vav_alert-->
+    <result column="zone_cooling_temperature_set_point" jdbcType="DOUBLE" property="zoneCoolingTemperatureSetPoint" />
+    <result column="zone_heating_temperature_set_point" jdbcType="DOUBLE" property="zoneHeatingTemperatureSetPoint" />
+    <result column="zone_temperature" jdbcType="DOUBLE" property="zoneTemperature" />
+    <result column="vav_name" jdbcType="VARCHAR" property="vavName" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    zone_cooling_temperature_set_point,
+    zone_heating_temperature_set_point, zone_temperature, vav_name, `time`
+  </sql>
+  <insert id="insert" parameterType="edu.neu.cs6510.pnnl.hunting.model.VavAlert">
+    <!--@mbg.generated-->
+    insert into ${vavName} (
+      zone_cooling_temperature_set_point, zone_heating_temperature_set_point, 
+      zone_temperature, vav_name, `time`)
+    values (#{record.zoneCoolingTemperatureSetPoint,jdbcType=DOUBLE}, #{record.zoneHeatingTemperatureSetPoint,jdbcType=DOUBLE},
+      #{record.zoneTemperature,jdbcType=DOUBLE}, #{vavName,jdbcType=VARCHAR}, #{record.time,jdbcType=TIMESTAMP})
+  </insert>
+
+  <select id="getVavAlertInRange" resultMap="BaseResultMap">
+    select  * from
+    ${vavName}
+    WHERE time between ${start} and ${end};
+  </select>
+</mapper>

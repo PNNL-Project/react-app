@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.neu.cs6510.pnnl.hunting.h2mapper.UpdateInfoMapper">
+  <resultMap id="BaseResultMap" type="edu.neu.cs6510.pnnl.hunting.model.UpdateInfo">
+    <!--@Table updateInfo-->
+    <id column="vav_name" jdbcType="VARCHAR" property="vavName" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+
+  <insert id="insert" keyColumn="vav_name" keyProperty="updateInfo.vavName" parameterType="edu.neu.cs6510.pnnl.hunting.model.UpdateInfo" >
+    insert into updateInfo
+    values (#{updateInfo.vavName,jdbcType=VARCHAR}, #{updateInfo.time,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="edu.neu.cs6510.pnnl.hunting.model.UpdateInfo">
+    update updateInfo
+    set
+    update_time = #{time,jdbcType=TIMESTAMP}
+    where vav_name = #{vavName,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select
+        *
+    from updateInfo
+    where vav_name = #{vavName,jdbcType=VARCHAR}
+  </select>
+</mapper>
